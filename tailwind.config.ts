@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'playfair': ['Playfair Display', 'serif'],
+        'poppins': ['Poppins', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -47,21 +51,34 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar: {
-          DEFAULT: "hsl(var(--sidebar-background))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          primary: "hsl(var(--sidebar-primary))",
-          "primary-foreground": "hsl(var(--sidebar-primary-foreground))",
-          accent: "hsl(var(--sidebar-accent))",
-          "accent-foreground": "hsl(var(--sidebar-accent-foreground))",
-          border: "hsl(var(--sidebar-border))",
-          ring: "hsl(var(--sidebar-ring))",
+        /* Dance Studio Brand Colors */
+        gold: {
+          DEFAULT: "#D4AF37",
+          50: "#FEF9E7",
+          100: "#FDF2C9",
+          200: "#F9E297",
+          300: "#F4CF55",
+          400: "#E9B308",
+          500: "#D4AF37",
+          600: "#B8941F",
+          700: "#9A7A1A",
+          800: "#82651C",
+          900: "#6F531C",
+        },
+        gray: {
+          850: "#111827",
+          950: "#0F0F0F",
         },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      backgroundImage: {
+        'hero-gradient': 'linear-gradient(90deg, #000 0%, #111827 100%)',
+        'dark-gradient': 'linear-gradient(90deg, #000 0%, #111827 100%)',
+        'hero-overlay': 'linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%)',
       },
       keyframes: {
         "accordion-down": {
