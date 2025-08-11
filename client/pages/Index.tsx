@@ -1,5 +1,18 @@
 import { useState } from "react";
-import { ChevronDown, Heart, Users, TrendingUp, Sparkles, Phone, Calendar, MapPin, Instagram, MessageCircle, Facebook, Plus } from "lucide-react";
+import {
+  ChevronDown,
+  Heart,
+  Users,
+  TrendingUp,
+  Sparkles,
+  Phone,
+  Calendar,
+  MapPin,
+  Instagram,
+  MessageCircle,
+  Facebook,
+  Plus,
+} from "lucide-react";
 
 export default function Index() {
   const [activeAccordion, setActiveAccordion] = useState<string | null>("q1");
@@ -17,20 +30,44 @@ export default function Index() {
             {/* Logo */}
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-                <span className="font-playfair font-bold text-black text-xl">LA</span>
+                <span className="font-playfair font-bold text-black text-xl">
+                  LA
+                </span>
               </div>
               <div>
-                <h1 className="font-playfair font-bold text-xl text-gold">Leandro Araújo</h1>
+                <h1 className="font-playfair font-bold text-xl text-gold">
+                  Leandro Araújo
+                </h1>
                 <p className="text-xs text-white/70">Estúdio de Dança</p>
               </div>
             </div>
 
             {/* Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
-              <a href="#beneficios" className="text-white hover:text-gold transition-colors">Benefícios</a>
-              <a href="#como-funciona" className="text-white hover:text-gold transition-colors">Como Funciona</a>
-              <a href="#sobre" className="text-white hover:text-gold transition-colors">Sobre</a>
-              <a href="#faq" className="text-white hover:text-gold transition-colors">FAQ</a>
+              <a
+                href="#beneficios"
+                className="text-white hover:text-gold transition-colors"
+              >
+                Benefícios
+              </a>
+              <a
+                href="#como-funciona"
+                className="text-white hover:text-gold transition-colors"
+              >
+                Como Funciona
+              </a>
+              <a
+                href="#sobre"
+                className="text-white hover:text-gold transition-colors"
+              >
+                Sobre
+              </a>
+              <a
+                href="#faq"
+                className="text-white hover:text-gold transition-colors"
+              >
+                FAQ
+              </a>
             </nav>
 
             {/* CTA Button */}
@@ -45,13 +82,13 @@ export default function Index() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 opacity-30">
-          <img 
-            src="https://api.builder.io/api/v1/image/assets/TEMP/0cb6e078005d923f117d4f61c48dc0a500816432?width=2880" 
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/0cb6e078005d923f117d4f61c48dc0a500816432?width=2880"
             alt="Dance studio background"
             className="w-full h-full object-cover"
           />
         </div>
-        
+
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-hero-gradient"></div>
         <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black to-transparent"></div>
@@ -63,9 +100,11 @@ export default function Index() {
               <span className="text-gold"> Mudança</span>
               <span className="text-white"> Acontecer em Você</span>
             </h1>
-            
+
             <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
-              Recupere sua confiança, alivie o estresse e descubra o prazer de se expressar com liberdade — mesmo que seja sua primeira vez dançando.
+              Recupere sua confiança, alivie o estresse e descubra o prazer de
+              se expressar com liberdade — mesmo que seja sua primeira vez
+              dançando.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -87,7 +126,9 @@ export default function Index() {
           {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="font-playfair font-bold text-3xl md:text-4xl mb-4">
-              <span className="text-white">Mais que dança — uma experiência de</span>
+              <span className="text-white">
+                Mais que dança — uma experiência de
+              </span>
               <span className="text-gold"> transformação</span>
             </h2>
             <div className="w-24 h-1 bg-gold mx-auto"></div>
@@ -112,10 +153,13 @@ export default function Index() {
                 <Users className="w-8 h-6 text-gold" fill="currentColor" />
               </div>
               <h3 className="font-bold text-xl mb-4">
-                Comunidade<br />Amigável
+                Comunidade
+                <br />
+                Amigável
               </h3>
               <p className="text-white/70 leading-relaxed">
-                Aqui você se conecta com mulheres que vibram na mesma energia que você.
+                Aqui você se conecta com mulheres que vibram na mesma energia
+                que você.
               </p>
             </div>
 
@@ -125,7 +169,9 @@ export default function Index() {
                 <TrendingUp className="w-7 h-6 text-gold" />
               </div>
               <h3 className="font-bold text-xl mb-4">
-                Do Iniciante ao<br />Avançado
+                Do Iniciante ao
+                <br />
+                Avançado
               </h3>
               <p className="text-white/70 leading-relaxed">
                 Passos adaptados para o seu nível, com evolução constante.
@@ -139,7 +185,8 @@ export default function Index() {
               </div>
               <h3 className="font-bold text-xl mb-4">Aulas Terapêuticas</h3>
               <p className="text-white/70 leading-relaxed">
-                Uma pausa para cuidar de você, corpo e mente, na correria do dia a dia.
+                Uma pausa para cuidar de você, corpo e mente, na correria do dia
+                a dia.
               </p>
             </div>
           </div>
@@ -156,7 +203,9 @@ export default function Index() {
               <span className="text-gold"> orgulho</span>
             </h2>
             <p className="text-white/80 max-w-2xl mx-auto mb-8">
-              Mulheres de todas as idades e histórias já resgataram sua autoestima e bem-estar com nossas aulas. O próximo sorriso pode ser o seu.
+              Mulheres de todas as idades e histórias já resgataram sua
+              autoestima e bem-estar com nossas aulas. O próximo sorriso pode
+              ser o seu.
             </p>
             <div className="w-24 h-1 bg-gold mx-auto"></div>
           </div>
@@ -165,13 +214,16 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Testimonial 1 */}
             <div className="bg-gray-850 border border-gold/20 rounded-lg p-8 relative">
-              <div className="absolute -top-6 -left-6 text-6xl text-gold/20 font-poppins">"</div>
+              <div className="absolute -top-6 -left-6 text-6xl text-gold/20 font-poppins">
+                "
+              </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Nunca imaginei que aos 45 anos eu encontraria tanta alegria na dança. O Leandro tem um jeito único de nos fazer sentir capazes.
+                Nunca imaginei que aos 45 anos eu encontraria tanta alegria na
+                dança. O Leandro tem um jeito único de nos fazer sentir capazes.
               </p>
               <div className="flex items-center gap-3">
-                <img 
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/52a65c4a5d32ac5903cf92b250f443edea1543c6?width=96" 
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/52a65c4a5d32ac5903cf92b250f443edea1543c6?width=96"
                   alt="Mariana"
                   className="w-12 h-12 rounded-full object-cover"
                 />
@@ -184,13 +236,16 @@ export default function Index() {
 
             {/* Testimonial 2 */}
             <div className="bg-gray-850 border border-gold/20 rounded-lg p-8 relative">
-              <div className="absolute -top-6 -left-6 text-6xl text-gold/20 font-poppins">"</div>
+              <div className="absolute -top-6 -left-6 text-6xl text-gold/20 font-poppins">
+                "
+              </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Comecei para aliviar o estresse do trabalho e acabei encontrando uma nova paixão. As aulas são o ponto alto da minha semana!
+                Comecei para aliviar o estresse do trabalho e acabei encontrando
+                uma nova paixão. As aulas são o ponto alto da minha semana!
               </p>
               <div className="flex items-center gap-3">
-                <img 
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/065ab49d16d3e31758c5f555d9195e9ff52c10bb?width=96" 
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/065ab49d16d3e31758c5f555d9195e9ff52c10bb?width=96"
                   alt="Carla"
                   className="w-12 h-12 rounded-full object-cover"
                 />
@@ -203,13 +258,16 @@ export default function Index() {
 
             {/* Testimonial 3 */}
             <div className="bg-gray-850 border border-gold/20 rounded-lg p-8 relative">
-              <div className="absolute -top-6 -left-6 text-6xl text-gold/20 font-poppins">"</div>
+              <div className="absolute -top-6 -left-6 text-6xl text-gold/20 font-poppins">
+                "
+              </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Aos 60 anos, achei que era tarde para começar. Que engano! Hoje me sinto mais jovem e confiante do que há décadas.
+                Aos 60 anos, achei que era tarde para começar. Que engano! Hoje
+                me sinto mais jovem e confiante do que há décadas.
               </p>
               <div className="flex items-center gap-3">
-                <img 
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/dcc78d12a2b410b0b58773e8ada9b0409674698b?width=96" 
+                <img
+                  src="https://api.builder.io/api/v1/image/assets/TEMP/dcc78d12a2b410b0b58773e8ada9b0409674698b?width=96"
                   alt="Regina"
                   className="w-12 h-12 rounded-full object-cover"
                 />
@@ -242,7 +300,9 @@ export default function Index() {
               <div className="w-20 h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="font-bold text-2xl text-black">1</span>
               </div>
-              <h3 className="font-bold text-xl mb-4">Envie um oi no WhatsApp</h3>
+              <h3 className="font-bold text-xl mb-4">
+                Envie um oi no WhatsApp
+              </h3>
               <p className="text-white/70 mb-6">
                 Clique e fale diretamente com nossa equipe.
               </p>
@@ -272,7 +332,9 @@ export default function Index() {
               <div className="w-20 h-20 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="font-bold text-2xl text-black">3</span>
               </div>
-              <h3 className="font-bold text-xl mb-4">Venha dançar e se redescobrir</h3>
+              <h3 className="font-bold text-xl mb-4">
+                Venha dançar e se redescobrir
+              </h3>
               <p className="text-white/70 mb-6">
                 Sinta a energia e veja a mudança acontecer.
               </p>
@@ -289,8 +351,8 @@ export default function Index() {
       <section className="py-20 relative overflow-hidden bg-hero-gradient">
         {/* Background Image */}
         <div className="absolute inset-0 opacity-20">
-          <img 
-            src="https://api.builder.io/api/v1/image/assets/TEMP/e46ba3c93eca765d987e7123ecd71fcf56d21158?width=2880" 
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/e46ba3c93eca765d987e7123ecd71fcf56d21158?width=2880"
             alt="Dance studio background"
             className="w-full h-full object-cover"
           />
@@ -299,7 +361,9 @@ export default function Index() {
         <div className="relative max-w-4xl mx-auto px-4 lg:px-20 text-center">
           {/* Special Offer Badge */}
           <div className="inline-flex items-center bg-gold/20 text-gold px-6 py-2 rounded-full mb-8">
-            <span className="font-semibold">OFERTA ESPECIAL — ESTA SEMANA APENAS</span>
+            <span className="font-semibold">
+              OFERTA ESPECIAL — ESTA SEMANA APENAS
+            </span>
           </div>
 
           <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-6">
@@ -308,33 +372,40 @@ export default function Index() {
           </h2>
 
           <p className="text-white/80 text-xl mb-12 max-w-2xl mx-auto">
-            Dê o primeiro passo sem compromisso e sinta como a dança pode transformar sua vida.
+            Dê o primeiro passo sem compromisso e sinta como a dança pode
+            transformar sua vida.
           </p>
 
           {/* Contact Form */}
           <div className="bg-gray-850/80 backdrop-blur-sm border border-gold/30 rounded-xl p-8 max-w-3xl mx-auto">
             <form className="space-y-6">
               <div>
-                <label className="block text-white/70 text-sm mb-2">Seu nome</label>
-                <input 
-                  type="text" 
+                <label className="block text-white/70 text-sm mb-2">
+                  Seu nome
+                </label>
+                <input
+                  type="text"
                   className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white placeholder-white/50 focus:border-gold focus:outline-none"
                   placeholder="Digite seu nome"
                 />
               </div>
-              
+
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-white/70 text-sm mb-2">Seu WhatsApp</label>
-                  <input 
-                    type="tel" 
+                  <label className="block text-white/70 text-sm mb-2">
+                    Seu WhatsApp
+                  </label>
+                  <input
+                    type="tel"
                     className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white placeholder-white/50 focus:border-gold focus:outline-none"
                     placeholder="(11) 99999-9999"
                   />
                 </div>
-                
+
                 <div>
-                  <label className="block text-white/70 text-sm mb-2">Melhor dia para aula teste</label>
+                  <label className="block text-white/70 text-sm mb-2">
+                    Melhor dia para aula teste
+                  </label>
                   <select className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white focus:border-gold focus:outline-none">
                     <option value="">Selecione uma opção</option>
                     <option value="seg">Segunda-feira</option>
@@ -346,9 +417,9 @@ export default function Index() {
                   </select>
                 </div>
               </div>
-              
-              <button 
-                type="submit" 
+
+              <button
+                type="submit"
                 className="w-full bg-gold text-black py-4 rounded-lg font-semibold text-lg hover:bg-gold/90 transition-colors"
               >
                 Agendar Minha Aula Teste Agora
@@ -368,7 +439,8 @@ export default function Index() {
               <span className="text-gold"> sentir</span>
             </h2>
             <p className="text-white/80 max-w-2xl mx-auto mb-8">
-              Veja como cada aula é um espaço para sorrir, se movimentar e recarregar suas forças.
+              Veja como cada aula é um espaço para sorrir, se movimentar e
+              recarregar suas forças.
             </p>
             <div className="w-24 h-1 bg-gold mx-auto"></div>
           </div>
@@ -377,43 +449,49 @@ export default function Index() {
           <div className="grid md:grid-cols-3 gap-6">
             {/* Gallery Item 1 */}
             <div className="relative rounded-lg overflow-hidden group">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/6a04acdfaf156fe7e2184ac5d83a0ceb99dc1f1e?width=800" 
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/6a04acdfaf156fe7e2184ac5d83a0ceb99dc1f1e?width=800"
                 alt="Aulas de Ballet"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-hero-overlay opacity-60"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="font-bold text-xl mb-2">Aulas de Ballet</h3>
-                <p className="text-white/80">Elegância e postura em cada movimento</p>
+                <p className="text-white/80">
+                  Elegância e postura em cada movimento
+                </p>
               </div>
             </div>
 
             {/* Gallery Item 2 */}
             <div className="relative rounded-lg overflow-hidden group">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/be54f78fb083f17caf59e258200db7fa1e2ce8a9?width=800" 
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/be54f78fb083f17caf59e258200db7fa1e2ce8a9?width=800"
                 alt="Dança Contemporânea"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-hero-overlay opacity-60"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="font-bold text-xl mb-2">Dança Contemporânea</h3>
-                <p className="text-white/80">Liberdade de expressão através do movimento</p>
+                <p className="text-white/80">
+                  Liberdade de expressão através do movimento
+                </p>
               </div>
             </div>
 
             {/* Gallery Item 3 */}
             <div className="relative rounded-lg overflow-hidden group">
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/dfea029b24229ab810a76024515deb1dbc0fcd5e?width=800" 
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/dfea029b24229ab810a76024515deb1dbc0fcd5e?width=800"
                 alt="Dança do Ventre"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-hero-overlay opacity-60"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="font-bold text-xl mb-2">Dança do Ventre</h3>
-                <p className="text-white/80">Feminilidade e autoconfiança em cada gesto</p>
+                <p className="text-white/80">
+                  Feminilidade e autoconfiança em cada gesto
+                </p>
               </div>
             </div>
           </div>
@@ -427,8 +505,8 @@ export default function Index() {
             {/* Image */}
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-gold/30 rounded-lg"></div>
-              <img 
-                src="https://api.builder.io/api/v1/image/assets/TEMP/32430afda76a0268204be6dc801eb96a8c52e1f2?width=800" 
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/32430afda76a0268204be6dc801eb96a8c52e1f2?width=800"
                 alt="Leandro Araújo"
                 className="relative rounded-lg w-full h-auto"
               />
@@ -442,9 +520,11 @@ export default function Index() {
                 <span className="text-white"> nessa jornada</span>
               </h2>
               <div className="w-24 h-1 bg-gold mb-8"></div>
-              
+
               <p className="text-white/80 text-lg leading-relaxed mb-8">
-                Com 17 anos de experiência e centenas de alunas transformadas, Leandro combina técnica, paciência e sensibilidade para ajudar você a conquistar mais confiança, postura e liberdade.
+                Com 17 anos de experiência e centenas de alunas transformadas,
+                Leandro combina técnica, paciência e sensibilidade para ajudar
+                você a conquistar mais confiança, postura e liberdade.
               </p>
 
               {/* Stats */}
@@ -498,13 +578,20 @@ export default function Index() {
                 onClick={() => toggleAccordion("q1")}
                 className="w-full bg-gray-850 px-6 py-4 flex items-center justify-between text-left hover:bg-gray-850/80 transition-colors"
               >
-                <h3 className="font-bold text-lg">Nunca dancei antes, posso participar?</h3>
-                <Plus className={`w-5 h-5 text-gold transition-transform ${activeAccordion === "q1" ? "rotate-45" : ""}`} />
+                <h3 className="font-bold text-lg">
+                  Nunca dancei antes, posso participar?
+                </h3>
+                <Plus
+                  className={`w-5 h-5 text-gold transition-transform ${activeAccordion === "q1" ? "rotate-45" : ""}`}
+                />
               </button>
               {activeAccordion === "q1" && (
                 <div className="bg-gray-850/50 px-6 py-4">
                   <p className="text-white/80">
-                    Sim! As aulas são adaptadas para iniciantes. Nosso método foi desenvolvido para que qualquer pessoa, independente de experiência prévia, possa aprender e evoluir no seu próprio ritmo.
+                    Sim! As aulas são adaptadas para iniciantes. Nosso método
+                    foi desenvolvido para que qualquer pessoa, independente de
+                    experiência prévia, possa aprender e evoluir no seu próprio
+                    ritmo.
                   </p>
                 </div>
               )}
@@ -516,13 +603,20 @@ export default function Index() {
                 onClick={() => toggleAccordion("q2")}
                 className="w-full bg-gray-850 px-6 py-4 flex items-center justify-between text-left hover:bg-gray-850/80 transition-colors"
               >
-                <h3 className="font-bold text-lg">Quais ritmos vou aprender?</h3>
-                <Plus className={`w-5 h-5 text-gold transition-transform ${activeAccordion === "q2" ? "rotate-45" : ""}`} />
+                <h3 className="font-bold text-lg">
+                  Quais ritmos vou aprender?
+                </h3>
+                <Plus
+                  className={`w-5 h-5 text-gold transition-transform ${activeAccordion === "q2" ? "rotate-45" : ""}`}
+                />
               </button>
               {activeAccordion === "q2" && (
                 <div className="bg-gray-850/50 px-6 py-4">
                   <p className="text-white/80">
-                    Do Ballet ao Contemporâneo, passando por Danças Urbanas, Dança do Ventre, Ritmos e Alongamento. Você poderá experimentar diferentes estilos e encontrar o que mais combina com você.
+                    Do Ballet ao Contemporâneo, passando por Danças Urbanas,
+                    Dança do Ventre, Ritmos e Alongamento. Você poderá
+                    experimentar diferentes estilos e encontrar o que mais
+                    combina com você.
                   </p>
                 </div>
               )}
@@ -534,13 +628,19 @@ export default function Index() {
                 onClick={() => toggleAccordion("q3")}
                 className="w-full bg-gray-850 px-6 py-4 flex items-center justify-between text-left hover:bg-gray-850/80 transition-colors"
               >
-                <h3 className="font-bold text-lg">Preciso de par para dançar?</h3>
-                <Plus className={`w-5 h-5 text-gold transition-transform ${activeAccordion === "q3" ? "rotate-45" : ""}`} />
+                <h3 className="font-bold text-lg">
+                  Preciso de par para dançar?
+                </h3>
+                <Plus
+                  className={`w-5 h-5 text-gold transition-transform ${activeAccordion === "q3" ? "rotate-45" : ""}`}
+                />
               </button>
               {activeAccordion === "q3" && (
                 <div className="bg-gray-850/50 px-6 py-4">
                   <p className="text-white/80">
-                    Não. Você evolui individualmente e interage no grupo conforme se sentir à vontade. Nossas aulas são focadas no desenvolvimento pessoal e na expressão individual.
+                    Não. Você evolui individualmente e interage no grupo
+                    conforme se sentir à vontade. Nossas aulas são focadas no
+                    desenvolvimento pessoal e na expressão individual.
                   </p>
                 </div>
               )}
@@ -553,12 +653,17 @@ export default function Index() {
                 className="w-full bg-gray-850 px-6 py-4 flex items-center justify-between text-left hover:bg-gray-850/80 transition-colors"
               >
                 <h3 className="font-bold text-lg">E se eu não tiver ritmo?</h3>
-                <Plus className={`w-5 h-5 text-gold transition-transform ${activeAccordion === "q4" ? "rotate-45" : ""}`} />
+                <Plus
+                  className={`w-5 h-5 text-gold transition-transform ${activeAccordion === "q4" ? "rotate-45" : ""}`}
+                />
               </button>
               {activeAccordion === "q4" && (
                 <div className="bg-gray-850/50 px-6 py-4">
                   <p className="text-white/80">
-                    A gente cuida disso para você, com paciência e leveza. O ritmo é algo que se desenvolve com a prática, e nosso método foi criado para ajudar qualquer pessoa a encontrar sua musicalidade natural.
+                    A gente cuida disso para você, com paciência e leveza. O
+                    ritmo é algo que se desenvolve com a prática, e nosso método
+                    foi criado para ajudar qualquer pessoa a encontrar sua
+                    musicalidade natural.
                   </p>
                 </div>
               )}
@@ -571,8 +676,8 @@ export default function Index() {
       <section className="py-20 relative overflow-hidden bg-hero-gradient">
         {/* Background Image */}
         <div className="absolute inset-0 opacity-30">
-          <img 
-            src="https://api.builder.io/api/v1/image/assets/TEMP/54b187313fb304b71e4b0a609e775e6e564aa343?width=2880" 
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/54b187313fb304b71e4b0a609e775e6e564aa343?width=2880"
             alt="Dance studio background"
             className="w-full h-full object-cover"
           />
@@ -580,7 +685,9 @@ export default function Index() {
 
         <div className="relative max-w-4xl mx-auto px-4 lg:px-20 text-center">
           <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-8 leading-tight">
-            <span className="text-white">Você já tem tudo que precisa para começar —</span>
+            <span className="text-white">
+              Você já tem tudo que precisa para começar —
+            </span>
             <span className="text-gold"> só falta dar o primeiro passo</span>
           </h2>
 
@@ -604,7 +711,9 @@ export default function Index() {
                 <span className="font-playfair font-bold text-black">LA</span>
               </div>
               <div>
-                <h3 className="font-playfair font-bold text-lg text-gold">Leandro Araújo</h3>
+                <h3 className="font-playfair font-bold text-lg text-gold">
+                  Leandro Araújo
+                </h3>
                 <p className="text-xs text-white/70">Estúdio de Dança</p>
               </div>
             </div>

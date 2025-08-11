@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        'playfair': ['Playfair Display', 'serif'],
-        'poppins': ['Poppins', 'sans-serif'],
+        playfair: ["Playfair Display", "serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -76,9 +76,10 @@ export default {
         sm: "calc(var(--radius) - 4px)",
       },
       backgroundImage: {
-        'hero-gradient': 'linear-gradient(90deg, #000 0%, #111827 100%)',
-        'dark-gradient': 'linear-gradient(90deg, #000 0%, #111827 100%)',
-        'hero-overlay': 'linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%)',
+        "hero-gradient": "linear-gradient(90deg, #000 0%, #111827 100%)",
+        "dark-gradient": "linear-gradient(90deg, #000 0%, #111827 100%)",
+        "hero-overlay":
+          "linear-gradient(90deg, #000 0%, rgba(0, 0, 0, 0) 100%)",
       },
       keyframes: {
         "accordion-down": {

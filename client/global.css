@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -11,8 +11,8 @@
    */
   :root {
     /* Dance Studio Brand Colors */
-    --background: 0 0% 0%;  /* Pure black */
-    --foreground: 0 0% 100%;  /* Pure white */
+    --background: 0 0% 0%; /* Pure black */
+    --foreground: 0 0% 100%; /* Pure white */
 
     --card: 210 11% 9%; /* Dark gray #111827 */
     --card-foreground: 0 0% 100%;
@@ -65,17 +65,26 @@
 
   body {
     @apply bg-black text-white;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family:
+      "Poppins",
+      -apple-system,
+      BlinkMacSystemFont,
+      sans-serif;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Playfair Display", serif;
   }
 }
 
 @layer components {
   .gold-gradient {
-    background: linear-gradient(90deg, #D4AF37 0%, #F4D03F 100%);
+    background: linear-gradient(90deg, #d4af37 0%, #f4d03f 100%);
   }
 
   .dark-gradient {
@@ -89,6 +98,6 @@
   .accent-line {
     width: 96px;
     height: 4px;
-    background: #D4AF37;
+    background: #d4af37;
   }
 }
