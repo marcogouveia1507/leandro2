@@ -506,7 +506,7 @@ export default function Index() {
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-gold/30 rounded-lg"></div>
               <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/32430afda76a0268204be6dc801eb96a8c52e1f2?width=800"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F151329794673473fb827dc608c450435"
                 alt="Leandro Araújo"
                 className="relative rounded-lg w-full h-auto"
               />
@@ -522,7 +522,7 @@ export default function Index() {
               <div className="w-24 h-1 bg-gold mb-8"></div>
 
               <p className="text-white/80 text-lg leading-relaxed mb-8">
-                Com 17 anos de experiência e centenas de alunas transformadas,
+                Com 15 anos de experiência e mais de mil alunas transformadas,
                 Leandro combina técnica, paciência e sensibilidade para ajudar
                 você a conquistar mais confiança, postura e liberdade.
               </p>
@@ -530,15 +530,15 @@ export default function Index() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 mb-8">
                 <div className="bg-black/40 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-gold mb-2">17+</div>
+                  <div className="text-3xl font-bold text-gold mb-2">15+</div>
                   <div className="text-white/70">Anos de experiência</div>
                 </div>
                 <div className="bg-black/40 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-gold mb-2">500+</div>
+                  <div className="text-3xl font-bold text-gold mb-2">1000+</div>
                   <div className="text-white/70">Alunas transformadas</div>
                 </div>
                 <div className="bg-black/40 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-gold mb-2">6</div>
+                  <div className="text-3xl font-bold text-gold mb-2">5+</div>
                   <div className="text-white/70">Estilos de dança</div>
                 </div>
               </div>
