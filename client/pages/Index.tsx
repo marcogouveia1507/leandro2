@@ -613,10 +613,9 @@ export default function Index() {
               {activeAccordion === "q2" && (
                 <div className="bg-gray-850/50 px-6 py-4">
                   <p className="text-white/80">
-                    Do Ballet ao Contemporâneo, passando por Danças Urbanas,
-                    Dança do Ventre, Ritmos e Alongamento. Você poderá
-                    experimentar diferentes estilos e encontrar o que mais
-                    combina com você.
+                    Das Músicas Latinas ao Axé, passando pelos Ritmos do Momento,
+                    Funk, Pop e hits atuais. Você poderá experimentar diferentes
+                    estilos e encontrar o que mais combina com você.
                   </p>
                 </div>
               )}
