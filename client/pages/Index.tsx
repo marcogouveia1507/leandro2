@@ -450,15 +450,15 @@ export default function Index() {
             {/* Gallery Item 1 */}
             <div className="relative rounded-lg overflow-hidden group">
               <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/6a04acdfaf156fe7e2184ac5d83a0ceb99dc1f1e?width=800"
-                alt="Aulas de Ballet"
+                src="https://images.pexels.com/photos/2188012/pexels-photo-2188012.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Músicas Latinas"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-hero-overlay opacity-60"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-bold text-xl mb-2">Aulas de Ballet</h3>
+                <h3 className="font-bold text-xl mb-2">Músicas Latinas</h3>
                 <p className="text-white/80">
-                  Elegância e postura em cada movimento
+                  Salsa, bachata e merengue com paixão e sensualidade
                 </p>
               </div>
             </div>
@@ -466,15 +466,15 @@ export default function Index() {
             {/* Gallery Item 2 */}
             <div className="relative rounded-lg overflow-hidden group">
               <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/be54f78fb083f17caf59e258200db7fa1e2ce8a9?width=800"
-                alt="Dança Contemporânea"
+                src="https://images.pexels.com/photos/8879897/pexels-photo-8879897.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Axé"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-hero-overlay opacity-60"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-bold text-xl mb-2">Dança Contemporânea</h3>
+                <h3 className="font-bold text-xl mb-2">Axé</h3>
                 <p className="text-white/80">
-                  Liberdade de expressão através do movimento
+                  A energia contagiante do carnaval baiano
                 </p>
               </div>
             </div>
@@ -482,15 +482,15 @@ export default function Index() {
             {/* Gallery Item 3 */}
             <div className="relative rounded-lg overflow-hidden group">
               <img
-                src="https://api.builder.io/api/v1/image/assets/TEMP/dfea029b24229ab810a76024515deb1dbc0fcd5e?width=800"
-                alt="Dança do Ventre"
+                src="https://images.pexels.com/photos/7480544/pexels-photo-7480544.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Ritmos do Momento"
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-hero-overlay opacity-60"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-bold text-xl mb-2">Dança do Ventre</h3>
+                <h3 className="font-bold text-xl mb-2">Ritmos do Momento</h3>
                 <p className="text-white/80">
-                  Feminilidade e autoconfiança em cada gesto
+                  Funk, pop e os hits que estão bombando
                 </p>
               </div>
             </div>
