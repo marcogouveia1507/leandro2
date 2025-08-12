@@ -628,7 +628,7 @@ export default function Index() {
                 className="w-full bg-gray-850 px-6 py-4 flex items-center justify-between text-left hover:bg-gray-850/80 transition-colors"
               >
                 <h3 className="font-bold text-lg">
-                  Preciso de par para dançar?
+                  Quais idade são aceitas na turma
                 </h3>
                 <Plus
                   className={`w-5 h-5 text-gold transition-transform ${activeAccordion === "q3" ? "rotate-45" : ""}`}
@@ -637,9 +637,7 @@ export default function Index() {
               {activeAccordion === "q3" && (
                 <div className="bg-gray-850/50 px-6 py-4">
                   <p className="text-white/80">
-                    Não. Você evolui individualmente e interage no grupo
-                    conforme se sentir à vontade. Nossas aulas são focadas no
-                    desenvolvimento pessoal e na expressão individual.
+                    Todas as idades são aceitas! Tudo o que você precisa é <strong className="text-white font-semibold">vontade de se mexer!</strong>
                   </p>
                 </div>
               )}
