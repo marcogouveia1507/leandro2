@@ -426,11 +426,24 @@ export default function Index() {
               </h2>
               <div className="w-24 h-1 bg-gold mb-8"></div>
 
-              <p className="text-white/80 text-lg leading-relaxed mb-8">
-                Com 15 anos de experiência e mais de mil alunas transformadas,
-                Leandro combina técnica, paciência e sensibilidade para ajudar
-                você a conquistar mais confiança, postura e liberdade.
-              </p>
+              <div className="text-white/80 text-lg leading-relaxed mb-8">
+                <p className="mb-4">
+                  Com mais de 17 anos de experiência, Leandro transformou
+                  sua paixão pela dança em profissão, explorando modalidades
+                  como balé, jazz, ritmos e contemporâneo. Depois de se
+                  apresentar em espetáculos e competições, descobriu que sua
+                  verdadeira realização estava em ensinar, inspirando
+                  pessoas a evoluir e se conectar por meio da dança.
+                </p>
+                <p>
+                  Hoje, à frente do seu estúdio, constrói um espaço onde a
+                  técnica se une à expressão e ao crescimento pessoal.
+                  <br />
+                  <br />
+                  Mais do que ensinar passos, busca despertar liberdade,
+                  confiança e presença em cada aluno.
+                </p>
+              </div>
 
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 mb-8">
@@ -625,7 +638,7 @@ export default function Index() {
                   <p className="text-xs text-white/70">Estúdio de Dança</p>
                 </div>
               </div>
-              <p className="text-gold/80 text-sm italic">liberte sua dança interior</p>
+              <p className="text-gold/80 text-sm italic">liberte sua dan��a interior</p>
             </div>
 
             {/* Address */}
