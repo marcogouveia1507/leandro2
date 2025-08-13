@@ -623,35 +623,24 @@ export default function Index() {
         <div className="max-w-7xl mx-auto px-4 lg:px-20">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-8 mb-8">
             {/* Logo */}
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center">
-                <span className="font-playfair font-bold text-black">LA</span>
+            <div>
+              <div className="flex items-center gap-3 mb-2">
+                <div className="w-10 h-10 rounded-full bg-gold flex items-center justify-center">
+                  <span className="font-playfair font-bold text-black">LA</span>
+                </div>
+                <div>
+                  <h3 className="font-playfair font-bold text-lg text-gold">
+                    Leandro Araújo
+                  </h3>
+                  <p className="text-xs text-white/70">Estúdio de Dança</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-playfair font-bold text-lg text-gold">
-                  Leandro Araújo
-                </h3>
-                <p className="text-xs text-white/70">Estúdio de Dança</p>
-              </div>
+              <p className="text-gold/80 text-sm italic">liberte sua dança interior</p>
             </div>
 
             {/* Address */}
             <div className="flex items-center gap-2 text-white/70">
-              <MapPin className="w-4 h-4 text-gold" />
-              <span>Rua das Artes, 123 - Centro</span>
-            </div>
-
-            {/* Social Media */}
-            <div className="flex gap-4">
-              <div className="w-10 h-10 bg-gray-850 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
-                <Instagram className="w-4 h-4 text-gold" />
-              </div>
-              <div className="w-10 h-10 bg-gray-850 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
-                <MessageCircle className="w-4 h-4 text-gold" />
-              </div>
-              <div className="w-10 h-10 bg-gray-850 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors">
-                <Facebook className="w-4 h-4 text-gold" />
-              </div>
+              <span>Avenida Paraná, 1268 - Foz do Iguaçu</span>
             </div>
           </div>
 
