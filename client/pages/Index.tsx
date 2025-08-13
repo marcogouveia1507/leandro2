@@ -66,9 +66,15 @@ export default function Index() {
 
         <div className="relative max-w-7xl mx-auto px-4 lg:px-20 pt-20">
           <div className="max-w-4xl">
-            <h1 className="font-playfair font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-8">
-              <span className="text-white">Recupere sua confiança, alivie o estresse e descubra o prazer de se expressar com liberdade — mesmo que seja sua primeira vez dançando.</span>
+            <h1 className="font-playfair font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
+              <span className="text-white">
+                <span className="text-gold">Recupere</span> sua confiança, <span className="text-gold">alivie</span> o estresse e <span className="text-gold">descubra</span> o prazer de se expressar com liberdade —
+              </span>
             </h1>
+
+            <h2 className="font-playfair font-bold text-2xl md:text-3xl text-white mb-8">
+              mesmo que seja sua primeira vez dançando.
+            </h2>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
