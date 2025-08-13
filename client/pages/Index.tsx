@@ -79,13 +79,19 @@ export default function Index() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-gold text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gold/90 transition-colors">
+              <Link
+                to="/formulario"
+                className="bg-gold text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gold/90 transition-colors text-center"
+              >
                 Quero Minha Aula Teste Agora
-              </button>
-              <button className="border border-gold/50 text-white px-8 py-4 rounded-full flex items-center gap-2 hover:bg-gold/10 transition-colors">
+              </Link>
+              <a
+                href="#beneficios"
+                className="border border-gold/50 text-white px-8 py-4 rounded-full flex items-center justify-center gap-2 hover:bg-gold/10 transition-colors"
+              >
                 Saiba Mais
                 <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -311,7 +317,7 @@ export default function Index() {
               </p>
               <div className="flex items-center justify-center gap-2 text-gold">
                 <MapPin className="w-4 h-4" />
-                <span>Ver endereço</span>
+                <span>Ver endere��o</span>
               </div>
             </div>
           </div>
