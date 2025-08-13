@@ -332,55 +332,20 @@ export default function Index() {
             transformar sua vida.
           </p>
 
-          {/* Contact Form */}
-          <div className="bg-gray-850/80 backdrop-blur-sm border border-gold/30 rounded-xl p-8 max-w-3xl mx-auto">
-            <form className="space-y-6">
-              <div>
-                <label className="block text-white/70 text-sm mb-2">
-                  Seu nome
-                </label>
-                <input
-                  type="text"
-                  className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white placeholder-white/50 focus:border-gold focus:outline-none"
-                  placeholder="Digite seu nome"
-                />
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-white/70 text-sm mb-2">
-                    Seu WhatsApp
-                  </label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white placeholder-white/50 focus:border-gold focus:outline-none"
-                    placeholder="(11) 99999-9999"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-white/70 text-sm mb-2">
-                    Melhor dia para aula teste
-                  </label>
-                  <select className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white focus:border-gold focus:outline-none">
-                    <option value="">Selecione uma opção</option>
-                    <option value="seg">Segunda-feira</option>
-                    <option value="ter">Terça-feira</option>
-                    <option value="qua">Quarta-feira</option>
-                    <option value="qui">Quinta-feira</option>
-                    <option value="sex">Sexta-feira</option>
-                    <option value="sab">Sábado</option>
-                  </select>
-                </div>
-              </div>
-
-              <Link
-                to="/formulario"
-                className="w-full bg-gold text-black py-4 rounded-lg font-semibold text-lg hover:bg-gold/90 transition-colors block text-center"
-              >
-                Agendar Minha Aula Teste Agora
-              </Link>
-            </form>
+          {/* CTA Section */}
+          <div className="bg-gray-850/80 backdrop-blur-sm border border-gold/30 rounded-xl p-8 max-w-2xl mx-auto text-center">
+            <h3 className="font-playfair font-bold text-2xl mb-4 text-gold">
+              Pronta para começar?
+            </h3>
+            <p className="text-white/80 mb-8">
+              Preencha nosso formulário rápido e agende sua aula teste gratuita!
+            </p>
+            <Link
+              to="/formulario"
+              className="inline-block bg-gold text-black px-12 py-4 rounded-lg font-bold text-lg hover:bg-gold/90 transition-colors"
+            >
+              Agendar Minha Aula Teste Agora
+            </Link>
           </div>
         </div>
       </section>
