@@ -195,18 +195,15 @@ export default function Index() {
                 "
               </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Nunca imaginei que aos 45 anos eu encontraria tanta alegria na
-                dança. O Leandro tem um jeito único de nos fazer sentir capazes.
+                Simplesmente amo essa escola!! Meu momento de paz! Faço as aulas de ritmos, alongamento e o Ballet adulto! Lugar aconchegante e com energia boa! 🖤🖤
               </p>
               <div className="flex items-center gap-3">
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/52a65c4a5d32ac5903cf92b250f443edea1543c6?width=96"
-                  alt="Mariana"
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+                <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
+                  <span className="font-bold text-black text-lg">C</span>
+                </div>
                 <div>
-                  <h4 className="font-bold">Mariana, 45</h4>
-                  <p className="text-gold text-sm">6 meses de aulas</p>
+                  <h4 className="font-bold">Cris Zanellatto</h4>
+                  <p className="text-gold text-sm">Aluna dedicada</p>
                 </div>
               </div>
             </div>
@@ -217,18 +214,15 @@ export default function Index() {
                 "
               </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Comecei para aliviar o estresse do trabalho e acabei encontrando
-                uma nova paixão. As aulas são o ponto alto da minha semana!
+                Professores incríveis, aulas maravilhosas! Ambiente super acolhedor. Recomendo!!!!
               </p>
               <div className="flex items-center gap-3">
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/065ab49d16d3e31758c5f555d9195e9ff52c10bb?width=96"
-                  alt="Carla"
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+                <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
+                  <span className="font-bold text-black text-lg">T</span>
+                </div>
                 <div>
-                  <h4 className="font-bold">Carla, 32</h4>
-                  <p className="text-gold text-sm">1 ano de aulas</p>
+                  <h4 className="font-bold">Thays Duarte Araujo</h4>
+                  <p className="text-gold text-sm">Aluna satisfeita</p>
                 </div>
               </div>
             </div>
@@ -239,18 +233,15 @@ export default function Index() {
                 "
               </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Aos 60 anos, achei que era tarde para começar. Que engano! Hoje
-                me sinto mais jovem e confiante do que há décadas.
+                Ótimo ambiente! Profissionais excelente. Aula de alongamento maravilhosa super relaxante e necessário para quem precisa de alongamento.
               </p>
               <div className="flex items-center gap-3">
-                <img
-                  src="https://api.builder.io/api/v1/image/assets/TEMP/dcc78d12a2b410b0b58773e8ada9b0409674698b?width=96"
-                  alt="Regina"
-                  className="w-12 h-12 rounded-full object-cover"
-                />
+                <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
+                  <span className="font-bold text-black text-lg">C</span>
+                </div>
                 <div>
-                  <h4 className="font-bold">Regina, 60</h4>
-                  <p className="text-gold text-sm">9 meses de aulas</p>
+                  <h4 className="font-bold">Cleia Witte</h4>
+                  <p className="text-gold text-sm">Aluna de alongamento</p>
                 </div>
               </div>
             </div>
