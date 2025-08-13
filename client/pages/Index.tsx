@@ -1,16 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import {
   ChevronDown,
   Heart,
   Users,
   TrendingUp,
   Sparkles,
-  Phone,
-  Calendar,
-  MapPin,
-  Instagram,
-  MessageCircle,
-  Facebook,
   Plus,
 } from "lucide-react";
 
@@ -42,38 +37,14 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
-              <a
-                href="#beneficios"
-                className="text-white hover:text-gold transition-colors"
-              >
-                Benefícios
-              </a>
-              <a
-                href="#como-funciona"
-                className="text-white hover:text-gold transition-colors"
-              >
-                Como Funciona
-              </a>
-              <a
-                href="#sobre"
-                className="text-white hover:text-gold transition-colors"
-              >
-                Sobre
-              </a>
-              <a
-                href="#faq"
-                className="text-white hover:text-gold transition-colors"
-              >
-                FAQ
-              </a>
-            </nav>
 
             {/* CTA Button */}
-            <button className="hidden lg:block bg-gold text-black px-6 py-2 rounded-full font-medium hover:bg-gold/90 transition-colors">
+            <Link
+              to="/formulario"
+              className="bg-gold text-black px-6 py-2 rounded-full font-medium hover:bg-gold/90 transition-colors"
+            >
               Aula Teste
-            </button>
+            </Link>
           </div>
         </div>
       </header>
