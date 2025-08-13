@@ -66,17 +66,9 @@ export default function Index() {
 
         <div className="relative max-w-7xl mx-auto px-4 lg:px-20 pt-20">
           <div className="max-w-4xl">
-            <h1 className="font-playfair font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
-              <span className="text-white">Entre na Dança e Veja a</span>
-              <span className="text-gold"> Mudança</span>
-              <span className="text-white"> Acontecer em Você</span>
+            <h1 className="font-playfair font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-8">
+              <span className="text-white">Recupere sua confiança, alivie o estresse e descubra o prazer de se expressar com liberdade — mesmo que seja sua primeira vez dançando.</span>
             </h1>
-
-            <p className="text-white/80 text-lg md:text-xl leading-relaxed mb-8 max-w-2xl">
-              Recupere sua confiança, alivie o estresse e descubra o prazer de
-              se expressar com liberdade — mesmo que seja sua primeira vez
-              dançando.
-            </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
@@ -338,7 +330,7 @@ export default function Index() {
         {/* Background Image */}
         <div className="absolute inset-0 opacity-20">
           <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/e46ba3c93eca765d987e7123ecd71fcf56d21158?width=2880"
+            src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2Fc1af0b9b13dd4fe9ba5b52d3b687c936?format=webp&width=800"
             alt="Dance studio background"
             className="w-full h-full object-cover"
           />
@@ -586,7 +578,7 @@ export default function Index() {
         {/* Background Image */}
         <div className="absolute inset-0 opacity-30">
           <img
-            src="https://api.builder.io/api/v1/image/assets/TEMP/54b187313fb304b71e4b0a609e775e6e564aa343?width=2880"
+            src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2Fc1af0b9b13dd4fe9ba5b52d3b687c936?format=webp&width=800"
             alt="Dance studio background"
             className="w-full h-full object-cover"
           />
