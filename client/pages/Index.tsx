@@ -469,13 +469,12 @@ export default function Index() {
 
               {/* CTA Buttons */}
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-gold text-black px-6 py-3 rounded-full font-semibold hover:bg-gold/90 transition-colors">
+                <Link
+                  to="/formulario"
+                  className="bg-gold text-black px-6 py-3 rounded-full font-semibold hover:bg-gold/90 transition-colors text-center"
+                >
                   Agende sua aula
-                </button>
-                <button className="border border-gold/50 text-white px-6 py-3 rounded-full flex items-center gap-2 hover:bg-gold/10 transition-colors">
-                  <Instagram className="w-4 h-4" />
-                  Instagram
-                </button>
+                </Link>
               </div>
             </div>
           </div>
