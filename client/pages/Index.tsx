@@ -394,72 +394,31 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <section className="py-20 bg-black">
-        <div className="max-w-7xl mx-auto px-4 lg:px-20">
-          {/* Section Header */}
-          <div className="text-center mb-16">
-            <h2 className="font-playfair font-bold text-3xl md:text-4xl mb-4">
-              <span className="text-white">A energia que você vai</span>
-              <span className="text-gold"> sentir</span>
-            </h2>
-            <p className="text-white/80 max-w-2xl mx-auto mb-8">
-              Veja como cada aula é um espaço para sorrir, se movimentar e
-              recarregar suas forças.
-            </p>
-            <div className="w-24 h-1 bg-gold mx-auto"></div>
-          </div>
+      {/* Parallax Section */}
+      <section
+        className="py-32 relative overflow-hidden"
+        style={{
+          backgroundImage: 'url("https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F276db5f212f740eb8691fc21a5bbf969?format=webp&width=1920")',
+          backgroundAttachment: 'fixed',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
 
-          {/* Gallery Grid */}
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* Gallery Item 1 */}
-            <div className="relative rounded-lg overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/2188012/pexels-photo-2188012.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Músicas Latinas"
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-hero-overlay opacity-60"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-bold text-xl mb-2">Músicas Latinas</h3>
-                <p className="text-white/80">
-                  Salsa, bachata e merengue com paixão e sensualidade
-                </p>
-              </div>
-            </div>
+        <div className="relative max-w-4xl mx-auto px-4 lg:px-20 text-center">
+          <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-8 text-white leading-tight">
+            Ritmos é o resultado de um <span className="text-gold">MIX de músicas e estilos</span> para sorrir, gastar calorias mas recarregar sua mente!
+          </h2>
 
-            {/* Gallery Item 2 */}
-            <div className="relative rounded-lg overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/8879897/pexels-photo-8879897.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Axé"
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-hero-overlay opacity-60"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-bold text-xl mb-2">Axé</h3>
-                <p className="text-white/80">
-                  A energia contagiante do carnaval baiano
-                </p>
-              </div>
-            </div>
-
-            {/* Gallery Item 3 */}
-            <div className="relative rounded-lg overflow-hidden group">
-              <img
-                src="https://images.pexels.com/photos/7480544/pexels-photo-7480544.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Ritmos do Momento"
-                className="w-full h-80 object-cover"
-              />
-              <div className="absolute inset-0 bg-hero-overlay opacity-60"></div>
-              <div className="absolute bottom-0 left-0 right-0 p-6">
-                <h3 className="font-bold text-xl mb-2">Ritmos do Momento</h3>
-                <p className="text-white/80">
-                  Funk, pop e os hits que estão bombando
-                </p>
-              </div>
-            </div>
-          </div>
+          <Link
+            to="/formulario"
+            className="inline-block bg-gold text-black px-10 py-5 rounded-full font-bold text-xl hover:bg-gold/90 transition-colors"
+          >
+            Quero Participar!
+          </Link>
         </div>
       </section>
 
