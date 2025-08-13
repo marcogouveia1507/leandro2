@@ -383,12 +383,12 @@ export default function Index() {
                 </div>
               </div>
 
-              <button
-                type="submit"
-                className="w-full bg-gold text-black py-4 rounded-lg font-semibold text-lg hover:bg-gold/90 transition-colors"
+              <Link
+                to="/formulario"
+                className="w-full bg-gold text-black py-4 rounded-lg font-semibold text-lg hover:bg-gold/90 transition-colors block text-center"
               >
                 Agendar Minha Aula Teste Agora
-              </button>
+              </Link>
             </form>
           </div>
         </div>
