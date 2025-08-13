@@ -605,9 +605,12 @@ export default function Index() {
             <span className="text-gold"> só falta dar o primeiro passo</span>
           </h2>
 
-          <button className="bg-gold text-black px-10 py-5 rounded-full font-bold text-xl hover:bg-gold/90 transition-colors mb-6">
+          <Link
+            to="/formulario"
+            className="inline-block bg-gold text-black px-10 py-5 rounded-full font-bold text-xl hover:bg-gold/90 transition-colors mb-6"
+          >
             Agendar Minha Aula Teste Agora
-          </button>
+          </Link>
 
           <p className="text-white/60 text-lg">
             Vagas limitadas. Agende hoje e comece sua transformação.
