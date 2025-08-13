@@ -280,13 +280,9 @@ export default function Index() {
               <h3 className="font-bold text-xl mb-4">
                 Envie um oi no WhatsApp
               </h3>
-              <p className="text-white/70 mb-6">
+              <p className="text-white/70">
                 Clique e fale diretamente com nossa equipe.
               </p>
-              <div className="flex items-center justify-center gap-2 text-gold">
-                <Phone className="w-4 h-4" />
-                <span>Conversar agora</span>
-              </div>
             </div>
 
             {/* Step 2 */}
@@ -295,13 +291,9 @@ export default function Index() {
                 <span className="font-bold text-2xl text-black">2</span>
               </div>
               <h3 className="font-bold text-xl mb-4">Escolha seu horário</h3>
-              <p className="text-white/70 mb-6">
+              <p className="text-white/70">
                 Flexibilidade para encaixar na sua rotina.
               </p>
-              <div className="flex items-center justify-center gap-2 text-gold">
-                <Calendar className="w-4 h-4" />
-                <span>Ver horários</span>
-              </div>
             </div>
 
             {/* Step 3 */}
@@ -312,13 +304,9 @@ export default function Index() {
               <h3 className="font-bold text-xl mb-4">
                 Venha dançar e se redescobrir
               </h3>
-              <p className="text-white/70 mb-6">
+              <p className="text-white/70">
                 Sinta a energia e veja a mudança acontecer.
               </p>
-              <div className="flex items-center justify-center gap-2 text-gold">
-                <MapPin className="w-4 h-4" />
-                <span>Ver endere��o</span>
-              </div>
             </div>
           </div>
         </div>
