@@ -448,7 +448,7 @@ export default function Index() {
               {/* Stats */}
               <div className="grid grid-cols-3 gap-6 mb-8">
                 <div className="bg-black/40 rounded-lg p-6 text-center">
-                  <div className="text-3xl font-bold text-gold mb-2">15+</div>
+                  <div className="text-3xl font-bold text-gold mb-2">17+</div>
                   <div className="text-white/70">Anos de experiência</div>
                 </div>
                 <div className="bg-black/40 rounded-lg p-6 text-center">
@@ -638,7 +638,7 @@ export default function Index() {
                   <p className="text-xs text-white/70">Estúdio de Dança</p>
                 </div>
               </div>
-              <p className="text-gold/80 text-sm italic">liberte sua dan��a interior</p>
+              <p className="text-gold/80 text-sm italic">liberte sua dança interior</p>
             </div>
 
             {/* Address */}
