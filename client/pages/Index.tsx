@@ -37,7 +37,6 @@ export default function Index() {
               </div>
             </div>
 
-
             {/* CTA Button */}
             <Link
               to="/formulario"
@@ -68,7 +67,10 @@ export default function Index() {
           <div className="max-w-4xl">
             <h1 className="font-playfair font-bold text-4xl md:text-5xl lg:text-6xl leading-tight mb-6">
               <span className="text-white">
-                <span className="text-gold">Recupere</span> sua confiança, <span className="text-gold">alivie</span> o estresse e <span className="text-gold">descubra</span> o prazer de se expressar com liberdade —
+                <span className="text-gold">Recupere</span> sua confiança,{" "}
+                <span className="text-gold">alivie</span> o estresse e{" "}
+                <span className="text-gold">descubra</span> o prazer de se
+                expressar com liberdade —
               </span>
             </h1>
 
@@ -193,7 +195,9 @@ export default function Index() {
                 "
               </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Simplesmente amo essa escola!! Meu momento de paz! Faço as aulas de ritmos, alongamento e o Ballet adulto! Lugar aconchegante e com energia boa! 🖤🖤
+                Simplesmente amo essa escola!! Meu momento de paz! Faço as aulas
+                de ritmos, alongamento e o Ballet adulto! Lugar aconchegante e
+                com energia boa! 🖤🖤
               </p>
 
               <div className="flex items-center gap-3 mb-4">
@@ -221,7 +225,8 @@ export default function Index() {
                 "
               </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Professores incríveis, aulas maravilhosas! Ambiente super acolhedor. Recomendo!!!!
+                Professores incríveis, aulas maravilhosas! Ambiente super
+                acolhedor. Recomendo!!!!
               </p>
 
               <div className="flex items-center gap-3 mb-4">
@@ -249,7 +254,9 @@ export default function Index() {
                 "
               </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Ótimo ambiente! Profissionais excelente. Aula de alongamento maravilhosa super relaxante e necessário para quem precisa de alongamento.
+                Ótimo ambiente! Profissionais excelente. Aula de alongamento
+                maravilhosa super relaxante e necessário para quem precisa de
+                alongamento.
               </p>
 
               <div className="flex items-center gap-3 mb-4">
@@ -379,11 +386,12 @@ export default function Index() {
       <section
         className="py-32 relative overflow-hidden"
         style={{
-          backgroundImage: 'url("https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F276db5f212f740eb8691fc21a5bbf969?format=webp&width=1920")',
-          backgroundAttachment: 'fixed',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundImage:
+            'url("https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F276db5f212f740eb8691fc21a5bbf969?format=webp&width=1920")',
+          backgroundAttachment: "fixed",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
       >
         {/* Dark overlay */}
@@ -391,7 +399,9 @@ export default function Index() {
 
         <div className="relative max-w-4xl mx-auto px-4 lg:px-20 text-center">
           <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-8 text-white leading-tight">
-            Ritmos é o resultado de um <span className="text-gold">MIX de músicas e estilos</span> para sorrir, gastar calorias e recarregar sua mente!
+            Ritmos é o resultado de um{" "}
+            <span className="text-gold">MIX de músicas e estilos</span> para
+            sorrir, gastar calorias e recarregar sua mente!
           </h2>
 
           <Link
@@ -428,12 +438,12 @@ export default function Index() {
 
               <div className="text-white/80 text-lg leading-relaxed mb-8">
                 <p className="mb-4">
-                  Com mais de 17 anos de experiência, Leandro transformou
-                  sua paixão pela dança em profissão, explorando modalidades
-                  como balé, jazz, ritmos e contemporâneo. Depois de se
-                  apresentar em espetáculos e competições, descobriu que sua
-                  verdadeira realização estava em ensinar, inspirando
-                  pessoas a evoluir e se conectar por meio da dança.
+                  Com mais de 17 anos de experiência, Leandro transformou sua
+                  paixão pela dança em profissão, explorando modalidades como
+                  balé, jazz, ritmos e contemporâneo. Depois de se apresentar em
+                  espetáculos e competições, descobriu que sua verdadeira
+                  realização estava em ensinar, inspirando pessoas a evoluir e
+                  se conectar por meio da dança.
                 </p>
                 <p>
                   Hoje, à frente do seu estúdio, constrói um espaço onde a
@@ -638,7 +648,9 @@ export default function Index() {
                   <p className="text-xs text-white/70">Estúdio de Dança</p>
                 </div>
               </div>
-              <p className="text-gold/80 text-sm italic">liberte sua dança interior</p>
+              <p className="text-gold/80 text-sm italic">
+                liberte sua dança interior
+              </p>
             </div>
 
             {/* Address */}

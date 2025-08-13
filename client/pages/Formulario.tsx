@@ -8,27 +8,29 @@ export default function Formulario() {
     telefone: "",
     email: "",
     dataNascimento: "",
-    experiencia: ""
+    experiencia: "",
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Validar se nome completo tem nome e sobrenome
-    const nomeParts = formData.nomeCompleto.trim().split(' ');
+    const nomeParts = formData.nomeCompleto.trim().split(" ");
     if (nomeParts.length < 2) {
-      alert('Por favor, digite seu nome completo (nome e sobrenome)');
+      alert("Por favor, digite seu nome completo (nome e sobrenome)");
       return;
     }
-    
+
     // Redirecionar para página de confirmação
-    navigate('/confirmacao');
+    navigate("/confirmacao");
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -41,10 +43,14 @@ export default function Formulario() {
             {/* Logo */}
             <Link to="/" className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-                <span className="font-playfair font-bold text-black text-xl">LA</span>
+                <span className="font-playfair font-bold text-black text-xl">
+                  LA
+                </span>
               </div>
               <div>
-                <h1 className="font-playfair font-bold text-xl text-gold">Leandro Araújo</h1>
+                <h1 className="font-playfair font-bold text-xl text-gold">
+                  Leandro Araújo
+                </h1>
                 <p className="text-xs text-white/70">Estúdio de Dança</p>
               </div>
             </Link>
@@ -61,7 +67,8 @@ export default function Formulario() {
               <span className="text-gold"> começa aqui!</span>
             </h1>
             <p className="text-white/80 text-xl">
-              Preencha o formulário abaixo e em breve entraremos em contato para agendar sua aula teste gratuita.
+              Preencha o formulário abaixo e em breve entraremos em contato para
+              agendar sua aula teste gratuita.
             </p>
           </div>
 
@@ -81,7 +88,9 @@ export default function Formulario() {
                   className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white placeholder-white/50 focus:border-gold focus:outline-none"
                   placeholder="Digite seu nome e sobrenome"
                 />
-                <p className="text-white/60 text-sm mt-1">Digite nome e sobrenome</p>
+                <p className="text-white/60 text-sm mt-1">
+                  Digite nome e sobrenome
+                </p>
               </div>
 
               {/* Telefone */}
@@ -145,8 +154,12 @@ export default function Formulario() {
                 >
                   <option value="">Selecione uma opção</option>
                   <option value="primeira-vez">1ª Vez</option>
-                  <option value="ja-dancei">Já dancei, mas estou parada(o)</option>
-                  <option value="outra-escola">Danço em outra escola/academia, mas quero conhecer</option>
+                  <option value="ja-dancei">
+                    Já dancei, mas estou parada(o)
+                  </option>
+                  <option value="outra-escola">
+                    Danço em outra escola/academia, mas quero conhecer
+                  </option>
                 </select>
               </div>
 
@@ -162,7 +175,8 @@ export default function Formulario() {
 
           <div className="text-center mt-8">
             <p className="text-white/60">
-              Todas as informações são confidenciais e usadas apenas para contato.
+              Todas as informações são confidenciais e usadas apenas para
+              contato.
             </p>
           </div>
         </div>
