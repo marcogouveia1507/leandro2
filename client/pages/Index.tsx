@@ -202,7 +202,6 @@ export default function Index() {
                 </div>
                 <div>
                   <h4 className="font-bold">Cris Zanellatto</h4>
-                  <p className="text-gold text-sm">Aluna dedicada</p>
                 </div>
               </div>
 
@@ -231,7 +230,6 @@ export default function Index() {
                 </div>
                 <div>
                   <h4 className="font-bold">Thays Duarte Araujo</h4>
-                  <p className="text-gold text-sm">Aluna satisfeita</p>
                 </div>
               </div>
 
@@ -260,7 +258,6 @@ export default function Index() {
                 </div>
                 <div>
                   <h4 className="font-bold">Cleia Witte</h4>
-                  <p className="text-gold text-sm">Aluna de alongamento</p>
                 </div>
               </div>
 
@@ -394,7 +391,7 @@ export default function Index() {
 
         <div className="relative max-w-4xl mx-auto px-4 lg:px-20 text-center">
           <h2 className="font-playfair font-bold text-4xl md:text-5xl mb-8 text-white leading-tight">
-            Ritmos é o resultado de um <span className="text-gold">MIX de músicas e estilos</span> para sorrir, gastar calorias mas recarregar sua mente!
+            Ritmos é o resultado de um <span className="text-gold">MIX de músicas e estilos</span> para sorrir, gastar calorias e recarregar sua mente!
           </h2>
 
           <Link
