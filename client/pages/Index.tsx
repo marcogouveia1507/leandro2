@@ -194,9 +194,24 @@ export default function Index() {
               <div className="absolute -top-6 -left-6 text-6xl text-gold/20 font-poppins">
                 "
               </div>
-              <p className="text-white/80 mb-6 relative z-10">
+              <p className="text-white/80 mb-4 relative z-10">
                 Simplesmente amo essa escola!! Meu momento de paz! Faço as aulas de ritmos, alongamento e o Ballet adulto! Lugar aconchegante e com energia boa! 🖤🖤
               </p>
+
+              {/* Google Rating */}
+              <div className="flex items-center gap-2 mb-4">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2Fbcc7eca467354443add8bf3c71e566ec?format=webp&width=800"
+                  alt="Google Avaliações"
+                  className="h-6"
+                />
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
                   <span className="font-bold text-black text-lg">C</span>
@@ -213,9 +228,24 @@ export default function Index() {
               <div className="absolute -top-6 -left-6 text-6xl text-gold/20 font-poppins">
                 "
               </div>
-              <p className="text-white/80 mb-6 relative z-10">
+              <p className="text-white/80 mb-4 relative z-10">
                 Professores incríveis, aulas maravilhosas! Ambiente super acolhedor. Recomendo!!!!
               </p>
+
+              {/* Google Rating */}
+              <div className="flex items-center gap-2 mb-4">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2Fbcc7eca467354443add8bf3c71e566ec?format=webp&width=800"
+                  alt="Google Avaliações"
+                  className="h-6"
+                />
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
                   <span className="font-bold text-black text-lg">T</span>
@@ -232,9 +262,24 @@ export default function Index() {
               <div className="absolute -top-6 -left-6 text-6xl text-gold/20 font-poppins">
                 "
               </div>
-              <p className="text-white/80 mb-6 relative z-10">
+              <p className="text-white/80 mb-4 relative z-10">
                 Ótimo ambiente! Profissionais excelente. Aula de alongamento maravilhosa super relaxante e necessário para quem precisa de alongamento.
               </p>
+
+              {/* Google Rating */}
+              <div className="flex items-center gap-2 mb-4">
+                <img
+                  src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2Fbcc7eca467354443add8bf3c71e566ec?format=webp&width=800"
+                  alt="Google Avaliações"
+                  className="h-6"
+                />
+                <div className="flex">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-lg">★</span>
+                  ))}
+                </div>
+              </div>
+
               <div className="flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
                   <span className="font-bold text-black text-lg">C</span>
@@ -386,7 +431,7 @@ export default function Index() {
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-gold/30 rounded-lg"></div>
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F151329794673473fb827dc608c450435"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2Fa8c93a8726954353baad4fd0b21b36cc?format=webp&width=800"
                 alt="Leandro Araújo"
                 className="relative rounded-lg w-full h-auto"
               />
