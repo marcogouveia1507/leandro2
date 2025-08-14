@@ -84,7 +84,7 @@
 
 @layer components {
   .gold-gradient {
-    background: linear-gradient(90deg, #d4af37 0%, #f4d03f 100%);
+    background: linear-gradient(90deg, #ccb079 0%, #ddd1a5 100%);
   }
 
   .dark-gradient {
@@ -98,6 +98,6 @@
   .accent-line {
     width: 96px;
     height: 4px;
-    background: #d4af37;
+    background: #ccb079;
   }
 }
