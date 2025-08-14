@@ -620,7 +620,7 @@ export default function Index() {
 
           <Link
             to="/formulario"
-            className="inline-block bg-gold text-black px-10 py-5 rounded-full font-bold text-xl hover:bg-gold/90 transition-colors mb-6"
+            className="inline-block bg-gold text-black px-10 py-5 rounded-full font-bold text-xl hover:bg-gold/90 transition-colors mb-6 btn-shimmer-gold btn-enhanced"
           >
             Agendar Minha Aula Teste Agora
           </Link>
@@ -661,7 +661,7 @@ export default function Index() {
 
           <div className="border-t border-gold/10 pt-8 text-center">
             <p className="text-white/50 text-sm">
-              © 2023 Estúdio Leandro Araújo. Todos os direitos reservados.
+              © 2023 Estúdio Leandro Ara��jo. Todos os direitos reservados.
             </p>
           </div>
         </div>
