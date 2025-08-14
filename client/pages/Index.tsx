@@ -417,14 +417,19 @@ export default function Index() {
       <section id="sobre" className="py-20 bg-hero-gradient">
         <div className="max-w-7xl mx-auto px-4 lg:px-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Image */}
+            {/* Video */}
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-gold/30 rounded-lg"></div>
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F00bb6d31352846fda8b560cce07d20c1"
-                alt="Leandro Araújo"
+              <video
+                src="https://cdn.builder.io/o/assets%2Fa78e05a011444c0fac36018284a8b3fc%2Fe5e1332e614e4eb99009631cf60d4cdd?alt=media&token=4cd31ccf-f601-4a79-a131-159a5be53d55&apiKey=a78e05a011444c0fac36018284a8b3fc"
+                autoPlay
+                loop
+                muted
+                playsInline
                 className="relative rounded-lg w-full h-auto"
-              />
+              >
+                Seu navegador não suporta vídeo.
+              </video>
             </div>
 
             {/* Content */}

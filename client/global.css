@@ -134,12 +134,12 @@
   .btn-shimmer-gold::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -50%;
     left: -100%;
-    width: 100%;
-    height: 100%;
+    width: 150%;
+    height: 200%;
     background: linear-gradient(
-      90deg,
+      45deg,
       transparent,
       rgba(255, 223, 128, 0.4),
       rgba(255, 235, 160, 0.8),
