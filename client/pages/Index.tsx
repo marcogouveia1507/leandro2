@@ -421,7 +421,7 @@ export default function Index() {
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-gold/30 rounded-lg"></div>
               <video
-                src="https://cdn.builder.io/o/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F220a7199fad1466c97df6d5ab74b6f65?alt=media&token=d2ce9353-ed5b-4027-985c-13168b935bc9&apiKey=a78e05a011444c0fac36018284a8b3fc"
+                src="https://cdn.builder.io/o/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F7d503eb6220a409d9a50fd4c79dd9b0c?alt=media&token=2e35b085-19e0-4d74-bb07-903b297074c1&apiKey=a78e05a011444c0fac36018284a8b3fc"
                 autoPlay
                 loop
                 muted
