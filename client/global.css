@@ -20,8 +20,8 @@
     --popover: 210 11% 9%;
     --popover-foreground: 0 0% 100%;
 
-    /* Gold primary color - #D4AF37 */
-    --primary: 45 69% 53%;
+    /* Gold primary color - #ccb079 */
+    --primary: 42 30% 63%;
     --primary-foreground: 0 0% 0%;
 
     --secondary: 210 11% 9%;
@@ -30,15 +30,15 @@
     --muted: 210 11% 9%;
     --muted-foreground: 0 0% 70%;
 
-    --accent: 45 69% 53%;
+    --accent: 42 30% 63%;
     --accent-foreground: 0 0% 0%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 45 69% 53% / 20%; /* Gold with opacity */
-    --input: 45 69% 53% / 30%;
-    --ring: 45 69% 53%;
+    --border: 42 30% 63% / 20%; /* Gold with opacity */
+    --input: 42 30% 63% / 30%;
+    --ring: 42 30% 63%;
 
     --radius: 0.5rem;
   }
