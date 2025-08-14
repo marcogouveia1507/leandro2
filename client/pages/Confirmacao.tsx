@@ -86,7 +86,7 @@ export default function Confirmacao() {
           <div className="text-center">
             <Link
               to="/"
-              className="inline-block bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-gold/90 transition-colors"
+              className="inline-block bg-gold text-black px-8 py-3 rounded-full font-semibold hover:bg-gold/90 transition-colors btn-shimmer-gold btn-enhanced"
             >
               Voltar ao Site
             </Link>
