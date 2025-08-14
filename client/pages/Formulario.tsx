@@ -166,7 +166,7 @@ export default function Formulario() {
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-gold text-black py-4 rounded-lg font-bold text-lg hover:bg-gold/90 transition-colors"
+                className="w-full bg-gold text-black py-4 rounded-lg font-bold text-lg hover:bg-gold/90 transition-colors btn-shimmer-gold btn-enhanced"
               >
                 Enviar Formulário
               </button>
