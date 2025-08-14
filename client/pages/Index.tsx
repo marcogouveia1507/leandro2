@@ -421,7 +421,7 @@ export default function Index() {
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-gold/30 rounded-lg"></div>
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2Fa8c93a8726954353baad4fd0b21b36cc?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/image/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F00bb6d31352846fda8b560cce07d20c1"
                 alt="Leandro Araújo"
                 className="relative rounded-lg w-full h-auto"
               />
