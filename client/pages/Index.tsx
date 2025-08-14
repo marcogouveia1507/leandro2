@@ -406,7 +406,7 @@ export default function Index() {
 
           <Link
             to="/formulario"
-            className="inline-block bg-gold text-black px-10 py-5 rounded-full font-bold text-xl hover:bg-gold/90 transition-colors"
+            className="inline-block bg-gold text-black px-10 py-5 rounded-full font-bold text-xl hover:bg-gold/90 transition-colors btn-shimmer-gold btn-enhanced"
           >
             Quero Participar!
           </Link>
