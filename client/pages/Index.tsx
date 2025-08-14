@@ -374,7 +374,7 @@ export default function Index() {
             </p>
             <Link
               to="/formulario"
-              className="inline-block bg-gold text-black px-12 py-4 rounded-lg font-bold text-lg hover:bg-gold/90 transition-colors"
+              className="inline-block bg-gold text-black px-12 py-4 rounded-lg font-bold text-lg hover:bg-gold/90 transition-colors btn-shimmer-gold btn-enhanced"
             >
               Agendar Minha Aula Teste Agora
             </Link>
