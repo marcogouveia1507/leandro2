@@ -40,7 +40,7 @@ export default function Index() {
             {/* CTA Button */}
             <Link
               to="/formulario"
-              className="bg-gold text-black px-6 py-2 rounded-full font-medium hover:bg-gold/90 transition-colors"
+              className="bg-gold text-black px-6 py-2 rounded-full font-medium hover:bg-gold/90 transition-colors btn-shimmer-gold btn-enhanced"
             >
               Aula Teste
             </Link>
