@@ -81,7 +81,7 @@ export default function Index() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/formulario"
-                className="bg-gold text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gold/90 transition-colors text-center"
+                className="bg-gold text-black px-8 py-4 rounded-full font-semibold text-lg hover:bg-gold/90 transition-colors text-center btn-shimmer-gold btn-enhanced"
               >
                 Quero Minha Aula Teste Agora
               </Link>
