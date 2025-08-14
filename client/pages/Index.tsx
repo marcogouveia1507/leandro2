@@ -7,13 +7,47 @@ import {
   TrendingUp,
   Sparkles,
   Plus,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
 export default function Index() {
   const [activeAccordion, setActiveAccordion] = useState<string | null>("q1");
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   const toggleAccordion = (id: string) => {
     setActiveAccordion(activeAccordion === id ? null : id);
+  };
+
+  const benefits = [
+    {
+      icon: Heart,
+      title: "Ambiente Acolhedor",
+      description: "Sinta-se segura e à vontade para se expressar sem julgamentos."
+    },
+    {
+      icon: Users,
+      title: "Comunidade\nAmigável",
+      description: "Aqui você se conecta com mulheres que vibram na mesma energia que você."
+    },
+    {
+      icon: TrendingUp,
+      title: "Do Iniciante ao\nAvançado",
+      description: "Passos adaptados para o seu nível, com evolução constante."
+    },
+    {
+      icon: Sparkles,
+      title: "Aulas Terapêuticas",
+      description: "Uma pausa para cuidar de você, corpo e mente, na correria do dia a dia."
+    }
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % benefits.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + benefits.length) % benefits.length);
   };
 
   return (
@@ -111,60 +145,66 @@ export default function Index() {
             <div className="w-24 h-1 bg-gold mx-auto"></div>
           </div>
 
-          {/* Benefits Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Benefit 1 */}
-            <div className="bg-gray-850 border border-gold/20 rounded-lg p-8 text-center">
-              <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="w-6 h-6 text-gold" fill="currentColor" />
+          {/* Benefits Carousel */}
+          <div className="relative max-w-4xl mx-auto">
+            <div className="overflow-hidden">
+              <div
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+              >
+                {benefits.map((benefit, index) => {
+                  const IconComponent = benefit.icon;
+                  return (
+                    <div key={index} className="w-full flex-shrink-0 px-4">
+                      <div className="bg-gray-850 border border-gold/20 rounded-lg p-8 text-center mx-auto max-w-sm">
+                        <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                          <IconComponent
+                            className={`${benefit.icon === Heart ? 'w-6 h-6' : benefit.icon === Users ? 'w-8 h-6' : 'w-7 h-6'} text-gold`}
+                            fill={benefit.icon === Heart || benefit.icon === Users ? "currentColor" : "none"}
+                          />
+                        </div>
+                        <h3 className="font-bold text-xl mb-4 whitespace-pre-line">
+                          {benefit.title}
+                        </h3>
+                        <p className="text-white/70 leading-relaxed">
+                          {benefit.description}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-              <h3 className="font-bold text-xl mb-4">Ambiente Acolhedor</h3>
-              <p className="text-white/70 leading-relaxed">
-                Sinta-se segura e à vontade para se expressar sem julgamentos.
-              </p>
             </div>
 
-            {/* Benefit 2 */}
-            <div className="bg-gray-850 border border-gold/20 rounded-lg p-8 text-center">
-              <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="w-8 h-6 text-gold" fill="currentColor" />
-              </div>
-              <h3 className="font-bold text-xl mb-4">
-                Comunidade
-                <br />
-                Amigável
-              </h3>
-              <p className="text-white/70 leading-relaxed">
-                Aqui você se conecta com mulheres que vibram na mesma energia
-                que você.
-              </p>
-            </div>
+            {/* Navigation Buttons */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-gold/20 hover:bg-gold/30 text-gold p-2 rounded-full transition-colors"
+              aria-label="Slide anterior"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
 
-            {/* Benefit 3 */}
-            <div className="bg-gray-850 border border-gold/20 rounded-lg p-8 text-center">
-              <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <TrendingUp className="w-7 h-6 text-gold" />
-              </div>
-              <h3 className="font-bold text-xl mb-4">
-                Do Iniciante ao
-                <br />
-                Avançado
-              </h3>
-              <p className="text-white/70 leading-relaxed">
-                Passos adaptados para o seu nível, com evolução constante.
-              </p>
-            </div>
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-gold/20 hover:bg-gold/30 text-gold p-2 rounded-full transition-colors"
+              aria-label="Próximo slide"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
 
-            {/* Benefit 4 */}
-            <div className="bg-gray-850 border border-gold/20 rounded-lg p-8 text-center">
-              <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Sparkles className="w-7 h-6 text-gold" />
-              </div>
-              <h3 className="font-bold text-xl mb-4">Aulas Terapêuticas</h3>
-              <p className="text-white/70 leading-relaxed">
-                Uma pausa para cuidar de você, corpo e mente, na correria do dia
-                a dia.
-              </p>
+            {/* Dots Indicator */}
+            <div className="flex justify-center mt-8 gap-2">
+              {benefits.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-3 h-3 rounded-full transition-colors ${
+                    currentSlide === index ? 'bg-gold' : 'bg-gold/30'
+                  }`}
+                  aria-label={`Ir para slide ${index + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -421,7 +461,7 @@ export default function Index() {
             <div className="relative">
               <div className="absolute -inset-4 border-2 border-gold/30 rounded-lg"></div>
               <video
-                src="https://cdn.builder.io/o/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F7d503eb6220a409d9a50fd4c79dd9b0c?alt=media&token=2e35b085-19e0-4d74-bb07-903b297074c1&apiKey=a78e05a011444c0fac36018284a8b3fc"
+                src="https://cdn.builder.io/o/assets%2Fa78e05a011444c0fac36018284a8b3fc%2F6b2ce8e21d6c4729a42243fcba2e3e58?alt=media&token=97df1e23-93bb-41b2-a2b2-49f8ef45ca03&apiKey=a78e05a011444c0fac36018284a8b3fc"
                 autoPlay
                 loop
                 muted
