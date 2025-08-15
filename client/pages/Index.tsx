@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useTracking, useTrackButton } from "../hooks/use-tracking";
 import {
   ChevronDown,
   Heart,
