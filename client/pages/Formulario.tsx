@@ -187,17 +187,23 @@ export default function Formulario() {
       return;
     }
 
+    // Helper function to add UTF-8 BOM to strings
+    const addUtf8Bom = (str: string): string => {
+      // UTF-8 BOM is EF BB BF, which is represented as \uFEFF in JavaScript
+      return '\uFEFF' + str;
+    };
+
     // Store data locally first
     const dataNascimento = `${formData.ano}-${formData.mes.padStart(2, "0")}-${formData.dia.padStart(2, "0")}`;
 
     const webhookData = {
-      nomeCompleto: formData.nomeCompleto.trim(),
-      email: formData.email.toLowerCase().trim(),
-      telefone: formData.telefone.replace(/\D/g, ""),
-      dataNascimento: dataNascimento,
-      experiencia: formData.experiencia,
-      source: getTrackingSource(),
-      timestamp: new Date().toISOString(),
+      nomeCompleto: addUtf8Bom(formData.nomeCompleto.trim()),
+      email: addUtf8Bom(formData.email.toLowerCase().trim()),
+      telefone: addUtf8Bom(formData.telefone.replace(/\D/g, "")),
+      dataNascimento: dataNascimento, // Date field without BOM as requested
+      experiencia: addUtf8Bom(formData.experiencia),
+      source: addUtf8Bom(getTrackingSource()),
+      timestamp: addUtf8Bom(new Date().toISOString()),
     };
 
     console.log("Form data to submit:", webhookData);
