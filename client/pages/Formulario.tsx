@@ -16,6 +16,41 @@ export default function Formulario() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // Function to capture URL tracking parameters
+  const getTrackingSource = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const referrer = document.referrer || window.location.origin;
+
+    // Extract UTM parameters
+    const utmSource = urlParams.get('utm_source') || '';
+    const utmMedium = urlParams.get('utm_medium') || '';
+    const utmCampaign = urlParams.get('utm_campaign') || '';
+    const utmContent = urlParams.get('utm_content') || '';
+    const utmTerm = urlParams.get('utm_term') || '';
+
+    // Build tracking URL in the specified format
+    if (utmSource || utmMedium || utmCampaign || utmContent || utmTerm) {
+      const baseUrl = window.location.origin + window.location.pathname;
+      let trackingUrl = baseUrl;
+
+      const params = [];
+      if (utmSource) params.push(`utm_source=${utmSource}`);
+      if (utmMedium) params.push(`utm_medium=${utmMedium}`);
+      if (utmCampaign) params.push(`utm_campaign=${utmCampaign}`);
+      if (utmContent) params.push(`utm_content=${utmContent}`);
+      if (utmTerm) params.push(`utm_term=${utmTerm}`);
+
+      if (params.length > 0) {
+        trackingUrl += '?' + params.join('&');
+      }
+
+      return trackingUrl;
+    }
+
+    // Fallback: return current URL or referrer info
+    return window.location.href;
+  };
+
   // Email validation regex
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -161,6 +196,7 @@ export default function Formulario() {
       telefone: formData.telefone.replace(/\D/g, ""),
       dataNascimento: dataNascimento,
       experiencia: formData.experiencia,
+      source: getTrackingSource(),
       timestamp: new Date().toISOString(),
     };
 
