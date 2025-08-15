@@ -20,6 +20,22 @@
 
       gtag("config", "AW-17413900847");
     </script>
+
+    <!-- Event snippet for Enviar formulário de lead conversion page -->
+    <script>
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+            'send_to': 'AW-17413900847/e2gICLrb04YbEK-UzO9A',
+            'event_callback': callback
+        });
+        return false;
+      }
+    </script>
   </head>
 
   <body>
