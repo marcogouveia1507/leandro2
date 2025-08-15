@@ -1,6 +1,8 @@
 import "./global.css";
 
+import { useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
+import { initializeGoogleAds } from "./lib/google-ads";
 import { createRoot, type Root } from "react-dom/client";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
