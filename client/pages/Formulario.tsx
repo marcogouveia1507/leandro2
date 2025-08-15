@@ -87,7 +87,11 @@ export default function Formulario() {
 
     // Check if date is valid
     const date = new Date(year, month - 1, day);
-    if (date.getDate() !== day || date.getMonth() !== month - 1 || date.getFullYear() !== year) {
+    if (
+      date.getDate() !== day ||
+      date.getMonth() !== month - 1 ||
+      date.getFullYear() !== year
+    ) {
       return "Data inválida";
     }
 
@@ -128,7 +132,7 @@ export default function Formulario() {
 
     try {
       // Format birth date for webhook
-      const dataNascimento = `${formData.ano}-${formData.mes.padStart(2, '0')}-${formData.dia.padStart(2, '0')}`;
+      const dataNascimento = `${formData.ano}-${formData.mes.padStart(2, "0")}-${formData.dia.padStart(2, "0")}`;
 
       // Prepare data for webhook
       const webhookData = {
@@ -140,13 +144,16 @@ export default function Formulario() {
       };
 
       // Send to webhook
-      const response = await fetch("https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const response = await fetch(
+        "https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(webhookData),
         },
-        body: JSON.stringify(webhookData),
-      });
+      );
 
       if (response.ok) {
         // Success - redirect to confirmation page
@@ -169,7 +176,7 @@ export default function Formulario() {
 
     // Clear error when user starts typing
     if (errors[name]) {
-      setErrors(prev => ({ ...prev, [name]: "" }));
+      setErrors((prev) => ({ ...prev, [name]: "" }));
     }
 
     setFormData({
@@ -194,7 +201,7 @@ export default function Formulario() {
 
     // Clear error when user starts typing
     if (errors.telefone) {
-      setErrors(prev => ({ ...prev, telefone: "" }));
+      setErrors((prev) => ({ ...prev, telefone: "" }));
     }
 
     setFormData({
@@ -261,7 +268,9 @@ export default function Formulario() {
                   placeholder="Digite seu nome completo"
                 />
                 {errors.nomeCompleto && (
-                  <p className="text-red-500 text-sm mt-1">{errors.nomeCompleto}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.nomeCompleto}
+                  </p>
                 )}
                 <p className="text-white/60 text-sm mt-1">
                   Digite seu nome completo
@@ -372,7 +381,9 @@ export default function Formulario() {
                   </div>
                 </div>
                 {errors.dataNascimento && (
-                  <p className="text-red-500 text-sm mt-1">{errors.dataNascimento}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.dataNascimento}
+                  </p>
                 )}
                 <p className="text-white/60 text-sm mt-1">
                   Digite dia, mês e ano de nascimento
@@ -404,7 +415,9 @@ export default function Formulario() {
                   </option>
                 </select>
                 {errors.experiencia && (
-                  <p className="text-red-500 text-sm mt-1">{errors.experiencia}</p>
+                  <p className="text-red-500 text-sm mt-1">
+                    {errors.experiencia}
+                  </p>
                 )}
               </div>
 

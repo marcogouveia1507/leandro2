@@ -108,7 +108,7 @@
   }
 
   .btn-shimmer::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 0;
     left: -100%;
@@ -132,7 +132,7 @@
   }
 
   .btn-shimmer-gold::before {
-    content: '';
+    content: "";
     position: absolute;
     top: -50%;
     left: -150%;
