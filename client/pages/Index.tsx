@@ -279,7 +279,7 @@ export default function Index() {
                 "
               </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Professores incr��veis, aulas maravilhosas! Ambiente super
+                Professores incríveis, aulas maravilhosas! Ambiente super
                 acolhedor. Recomendo!!!!
               </p>
 
@@ -536,6 +536,7 @@ export default function Index() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link
                   to="/formulario"
+                  onClick={trackAboutCTA}
                   className="bg-gold text-black px-6 py-3 rounded-full font-semibold hover:bg-gold/90 transition-colors text-center btn-shimmer-gold btn-enhanced"
                 >
                   Agende sua aula
