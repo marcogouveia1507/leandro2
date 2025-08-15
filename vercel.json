@@ -1,6 +1,6 @@
 {
   "buildCommand": "npm run build:client",
-  "outputDirectory": "dist",
+  "outputDirectory": "dist/spa",
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "vite",
