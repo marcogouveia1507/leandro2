@@ -24,5 +24,10 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
+  // Tracking API routes
+  app.post("/api/tracking", handleTracking);
+  app.get("/api/tracking/analytics", handleTrackingAnalytics);
+  app.delete("/api/tracking", handleClearTracking);
+
   return app;
 }
