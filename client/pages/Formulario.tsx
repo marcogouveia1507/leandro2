@@ -152,28 +152,30 @@ export default function Formulario() {
       return;
     }
 
+    // Store data locally first
+    const dataNascimento = `${formData.ano}-${formData.mes.padStart(2, "0")}-${formData.dia.padStart(2, "0")}`;
+
+    const webhookData = {
+      nomeCompleto: formData.nomeCompleto.trim(),
+      email: formData.email.toLowerCase().trim(),
+      telefone: formData.telefone.replace(/\D/g, ""),
+      dataNascimento: dataNascimento,
+      experiencia: formData.experiencia,
+      timestamp: new Date().toISOString(),
+    };
+
+    console.log("Form data to submit:", webhookData);
+
+    // Try multiple submission methods
+    let submissionSuccess = false;
+
+    // Method 1: Try with normal CORS
     try {
-      // Format birth date for webhook
-      const dataNascimento = `${formData.ano}-${formData.mes.padStart(2, "0")}-${formData.dia.padStart(2, "0")}`;
-
-      // Prepare data for webhook
-      const webhookData = {
-        nomeCompleto: formData.nomeCompleto.trim(),
-        email: formData.email.toLowerCase().trim(),
-        telefone: formData.telefone.replace(/\D/g, ""), // Send only numbers
-        dataNascimento: dataNascimento,
-        experiencia: formData.experiencia,
-        timestamp: new Date().toISOString(),
-      };
-
-      console.log("Sending data to webhook:", webhookData);
-
-      // Send to webhook
+      console.log("Attempting normal fetch...");
       const response = await fetch(
         "https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/",
         {
           method: "POST",
-          mode: "no-cors", // This helps with CORS issues
           headers: {
             "Content-Type": "application/json",
           },
@@ -181,25 +183,83 @@ export default function Formulario() {
         },
       );
 
-      console.log("Webhook response status:", response.status);
+      console.log("Response status:", response.status);
+      console.log("Response ok:", response.ok);
 
-      // With no-cors mode, we can't read the response
-      // So we assume success and redirect
-      navigate("/confirmacao");
-    } catch (error) {
-      console.error("Error submitting form:", error);
-
-      // More specific error messages
-      if (error instanceof TypeError && error.message.includes("fetch")) {
-        alert("Erro de conexão. Verifique sua internet e tente novamente.");
-      } else {
-        alert(
-          "Erro ao enviar formulário. Tente novamente em alguns instantes.",
-        );
+      if (response.ok || response.status === 200) {
+        console.log("Submission successful via normal fetch");
+        submissionSuccess = true;
       }
-    } finally {
-      setIsSubmitting(false);
+    } catch (error) {
+      console.log("Normal fetch failed:", error);
     }
+
+    // Method 2: Try with no-cors if first method failed
+    if (!submissionSuccess) {
+      try {
+        console.log("Attempting no-cors fetch...");
+        await fetch(
+          "https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/",
+          {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(webhookData),
+          },
+        );
+
+        console.log("No-cors submission completed");
+        submissionSuccess = true; // Assume success with no-cors
+      } catch (error) {
+        console.log("No-cors fetch also failed:", error);
+      }
+    }
+
+    // Method 3: Try with form data if JSON fails
+    if (!submissionSuccess) {
+      try {
+        console.log("Attempting form data submission...");
+        const formData2 = new FormData();
+        formData2.append("nomeCompleto", webhookData.nomeCompleto);
+        formData2.append("email", webhookData.email);
+        formData2.append("telefone", webhookData.telefone);
+        formData2.append("dataNascimento", webhookData.dataNascimento);
+        formData2.append("experiencia", webhookData.experiencia);
+        formData2.append("timestamp", webhookData.timestamp);
+
+        await fetch(
+          "https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/",
+          {
+            method: "POST",
+            mode: "no-cors",
+            body: formData2,
+          },
+        );
+
+        console.log("Form data submission completed");
+        submissionSuccess = true;
+      } catch (error) {
+        console.log("Form data submission failed:", error);
+      }
+    }
+
+    if (submissionSuccess) {
+      console.log("Form submitted successfully, redirecting...");
+      // Store data in localStorage as backup
+      localStorage.setItem("lastFormSubmission", JSON.stringify(webhookData));
+      navigate("/confirmacao");
+    } else {
+      console.error("All submission methods failed");
+      // Store data locally for retry
+      localStorage.setItem("pendingFormSubmission", JSON.stringify(webhookData));
+      alert("Erro de conexão. Seus dados foram salvos e você pode tentar novamente. Redirecionando...");
+      // Still redirect but with saved data
+      navigate("/confirmacao");
+    }
+
+    setIsSubmitting(false);
   };
 
   const handleChange = (
