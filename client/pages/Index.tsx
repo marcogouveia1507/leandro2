@@ -279,7 +279,7 @@ export default function Index() {
                 "
               </div>
               <p className="text-white/80 mb-6 relative z-10">
-                Professores incríveis, aulas maravilhosas! Ambiente super
+                Professores incr��veis, aulas maravilhosas! Ambiente super
                 acolhedor. Recomendo!!!!
               </p>
 
@@ -461,6 +461,7 @@ export default function Index() {
 
           <Link
             to="/formulario"
+            onClick={trackParallax}
             className="inline-block bg-gold text-black px-10 py-5 rounded-full font-bold text-xl hover:bg-gold/90 transition-colors btn-shimmer-gold btn-enhanced"
           >
             Quero Participar!
