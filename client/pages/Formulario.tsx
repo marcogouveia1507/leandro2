@@ -1,6 +1,13 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
+// Declare global function for Google Ads conversion tracking
+declare global {
+  interface Window {
+    gtag_report_conversion: (url?: string) => boolean;
+  }
+}
+
 export default function Formulario() {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -22,11 +29,11 @@ export default function Formulario() {
     const referrer = document.referrer || window.location.origin;
 
     // Extract UTM parameters
-    const utmSource = urlParams.get("utm_source") || "";
-    const utmMedium = urlParams.get("utm_medium") || "";
-    const utmCampaign = urlParams.get("utm_campaign") || "";
-    const utmContent = urlParams.get("utm_content") || "";
-    const utmTerm = urlParams.get("utm_term") || "";
+    const utmSource = urlParams.get('utm_source') || '';
+    const utmMedium = urlParams.get('utm_medium') || '';
+    const utmCampaign = urlParams.get('utm_campaign') || '';
+    const utmContent = urlParams.get('utm_content') || '';
+    const utmTerm = urlParams.get('utm_term') || '';
 
     // Build tracking URL in the specified format
     if (utmSource || utmMedium || utmCampaign || utmContent || utmTerm) {
@@ -41,7 +48,7 @@ export default function Formulario() {
       if (utmTerm) params.push(`utm_term=${utmTerm}`);
 
       if (params.length > 0) {
-        trackingUrl += "?" + params.join("&");
+        trackingUrl += '?' + params.join('&');
       }
 
       return trackingUrl;
@@ -190,7 +197,7 @@ export default function Formulario() {
     // Helper function to add UTF-8 BOM to strings
     const addUtf8Bom = (str: string): string => {
       // UTF-8 BOM is EF BB BF, which is represented as \uFEFF in JavaScript
-      return "\uFEFF" + str;
+      return '\uFEFF' + str;
     };
 
     // Store data locally first
@@ -286,6 +293,12 @@ export default function Formulario() {
       console.log("Form submitted successfully, redirecting...");
       // Store data in localStorage as backup
       localStorage.setItem("lastFormSubmission", JSON.stringify(webhookData));
+
+      // Track Google Ads conversion
+      if (typeof (window as any).gtag_report_conversion === 'function') {
+        (window as any).gtag_report_conversion();
+      }
+
       navigate("/confirmacao");
     } else {
       console.error("All submission methods failed");
