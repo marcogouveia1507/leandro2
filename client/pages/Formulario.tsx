@@ -163,13 +163,17 @@ export default function Formulario() {
         telefone: formData.telefone.replace(/\D/g, ""), // Send only numbers
         dataNascimento: dataNascimento,
         experiencia: formData.experiencia,
+        timestamp: new Date().toISOString(),
       };
+
+      console.log("Sending data to webhook:", webhookData);
 
       // Send to webhook
       const response = await fetch(
         "https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/",
         {
           method: "POST",
+          mode: "no-cors", // This helps with CORS issues
           headers: {
             "Content-Type": "application/json",
           },
@@ -177,15 +181,21 @@ export default function Formulario() {
         },
       );
 
-      if (response.ok) {
-        // Success - redirect to confirmation page
-        navigate("/confirmacao");
-      } else {
-        throw new Error("Erro ao enviar formulário");
-      }
+      console.log("Webhook response status:", response.status);
+
+      // With no-cors mode, we can't read the response
+      // So we assume success and redirect
+      navigate("/confirmacao");
+
     } catch (error) {
       console.error("Error submitting form:", error);
-      alert("Erro ao enviar formulário. Tente novamente.");
+
+      // More specific error messages
+      if (error instanceof TypeError && error.message.includes("fetch")) {
+        alert("Erro de conexão. Verifique sua internet e tente novamente.");
+      } else {
+        alert("Erro ao enviar formulário. Tente novamente em alguns instantes.");
+      }
     } finally {
       setIsSubmitting(false);
     }
