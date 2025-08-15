@@ -283,10 +283,28 @@ export default function Formulario() {
 
     if (submissionSuccess) {
       console.log("Form submitted successfully, redirecting...");
+
+      // Track form submission with new tracking system
+      trackFormSubmit({
+        email: formData.email,
+        phone: formData.telefone,
+        experience: formData.experiencia,
+        utm_params: getUTMParams(),
+        campaign_info: getCampaignInfo()
+      });
+
+      // Track lead conversion
+      trackConversion('lead_generated', {
+        lead_value: 50, // Estimated value of a lead
+        form_name: 'aula_teste_form',
+        lead_source: getCampaignInfo().source,
+        lead_campaign: getCampaignInfo().campaign
+      });
+
       // Store data in localStorage as backup
       localStorage.setItem("lastFormSubmission", JSON.stringify(webhookData));
 
-      // Track Google Ads conversion
+      // Track Google Ads conversion (legacy)
       if (typeof (window as any).gtag_report_conversion === "function") {
         (window as any).gtag_report_conversion();
       }
@@ -367,7 +385,7 @@ export default function Formulario() {
                 <h1 className="font-playfair font-bold text-xl text-gold">
                   Leandro Araújo
                 </h1>
-                <p className="text-xs text-white/70">Estúdio de Dança</p>
+                <p className="text-xs text-white/70">Est��dio de Dança</p>
               </div>
             </Link>
           </div>
