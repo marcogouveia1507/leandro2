@@ -66,33 +66,55 @@ export default function Formulario() {
 
   const validateDate = (dia: string, mes: string, ano: string): string => {
     if (!dia || !mes || !ano) {
-      return "Data de nascimento é obrigatória";
+      return "Data de nascimento é obrigatória (dia, mês e ano)";
     }
 
     const day = parseInt(dia);
     const month = parseInt(mes);
     const year = parseInt(ano);
 
+    // Check if values are valid numbers
+    if (isNaN(day) || isNaN(month) || isNaN(year)) {
+      return "Digite apenas números válidos";
+    }
+
+    // Validate day
     if (day < 1 || day > 31) {
       return "Dia deve estar entre 1 e 31";
     }
 
+    // Validate month
     if (month < 1 || month > 12) {
       return "Mês deve estar entre 1 e 12";
     }
 
-    if (year < 1900 || year > new Date().getFullYear()) {
-      return "Ano inválido";
+    // Validate year (reasonable age range)
+    const currentYear = new Date().getFullYear();
+    if (year < 1900) {
+      return "Ano deve ser maior que 1900";
+    }
+    if (year > currentYear) {
+      return "Ano não pode ser futuro";
+    }
+    if (year > currentYear - 5) {
+      return "Idade mínima de 5 anos";
     }
 
-    // Check if date is valid
+    // Check if date exists (handles leap years, month lengths, etc.)
     const date = new Date(year, month - 1, day);
     if (
       date.getDate() !== day ||
       date.getMonth() !== month - 1 ||
       date.getFullYear() !== year
     ) {
-      return "Data inválida";
+      return "Esta data não existe no calendário";
+    }
+
+    // Check if date is not in the future
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+    if (date > today) {
+      return "Data de nascimento não pode ser futura";
     }
 
     return "";
@@ -340,6 +362,7 @@ export default function Formulario() {
                       min="1"
                       max="31"
                       placeholder="Dia"
+                      title="Digite o dia do nascimento (1-31)"
                       className={`w-full px-4 py-3 rounded-lg bg-black/50 border text-white placeholder-white/50 focus:outline-none ${
                         errors.dataNascimento
                           ? "border-red-500 focus:border-red-500"
@@ -356,6 +379,7 @@ export default function Formulario() {
                       min="1"
                       max="12"
                       placeholder="Mês"
+                      title="Digite o mês do nascimento (1-12)"
                       className={`w-full px-4 py-3 rounded-lg bg-black/50 border text-white placeholder-white/50 focus:outline-none ${
                         errors.dataNascimento
                           ? "border-red-500 focus:border-red-500"
@@ -370,8 +394,9 @@ export default function Formulario() {
                       value={formData.ano}
                       onChange={handleChange}
                       min="1900"
-                      max={new Date().getFullYear()}
+                      max={new Date().getFullYear() - 5}
                       placeholder="Ano"
+                      title="Digite o ano do nascimento"
                       className={`w-full px-4 py-3 rounded-lg bg-black/50 border text-white placeholder-white/50 focus:outline-none ${
                         errors.dataNascimento
                           ? "border-red-500 focus:border-red-500"
