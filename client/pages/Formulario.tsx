@@ -7,30 +7,199 @@ export default function Formulario() {
     nomeCompleto: "",
     telefone: "",
     email: "",
-    dataNascimento: "",
+    dia: "",
+    mes: "",
+    ano: "",
     experiencia: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // Validar se nome completo tem nome e sobrenome
-    const nomeParts = formData.nomeCompleto.trim().split(" ");
-    if (nomeParts.length < 2) {
-      alert("Por favor, digite seu nome completo (nome e sobrenome)");
+  // Email validation regex
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Validation functions
+  const validateName = (name: string): string => {
+    const trimmedName = name.trim();
+    if (!trimmedName) {
+      return "Nome é obrigatório";
+    }
+    if (trimmedName.length < 1) {
+      return "Nome deve ter pelo menos um caractere";
+    }
+    return "";
+  };
+
+  const validateEmail = (email: string): string => {
+    if (!email.trim()) {
+      return "E-mail é obrigatório";
+    }
+    if (!emailRegex.test(email)) {
+      return "Digite um e-mail válido";
+    }
+    return "";
+  };
+
+  const validatePhone = (phone: string): string => {
+    if (!phone.trim()) {
+      return "Telefone é obrigatório";
+    }
+
+    // Remove all non-numeric characters
+    const numericPhone = phone.replace(/\D/g, "");
+
+    if (numericPhone.length < 10 || numericPhone.length > 15) {
+      return "Telefone deve ter entre 10 e 15 dígitos";
+    }
+
+    // Brazilian phone validation
+    if (numericPhone.length === 10 || numericPhone.length === 11) {
+      const ddd = parseInt(numericPhone.substring(0, 2));
+      if (ddd < 11 || ddd > 99) {
+        return "DDD deve estar entre 11 e 99";
+      }
+    }
+
+    return "";
+  };
+
+  const validateDate = (dia: string, mes: string, ano: string): string => {
+    if (!dia || !mes || !ano) {
+      return "Data de nascimento é obrigatória";
+    }
+
+    const day = parseInt(dia);
+    const month = parseInt(mes);
+    const year = parseInt(ano);
+
+    if (day < 1 || day > 31) {
+      return "Dia deve estar entre 1 e 31";
+    }
+
+    if (month < 1 || month > 12) {
+      return "Mês deve estar entre 1 e 12";
+    }
+
+    if (year < 1900 || year > new Date().getFullYear()) {
+      return "Ano inválido";
+    }
+
+    // Check if date is valid
+    const date = new Date(year, month - 1, day);
+    if (date.getDate() !== day || date.getMonth() !== month - 1 || date.getFullYear() !== year) {
+      return "Data inválida";
+    }
+
+    return "";
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    // Reset errors
+    const newErrors: Record<string, string> = {};
+
+    // Validate all fields
+    const nameError = validateName(formData.nomeCompleto);
+    if (nameError) newErrors.nomeCompleto = nameError;
+
+    const emailError = validateEmail(formData.email);
+    if (emailError) newErrors.email = emailError;
+
+    const phoneError = validatePhone(formData.telefone);
+    if (phoneError) newErrors.telefone = phoneError;
+
+    const dateError = validateDate(formData.dia, formData.mes, formData.ano);
+    if (dateError) newErrors.dataNascimento = dateError;
+
+    if (!formData.experiencia) {
+      newErrors.experiencia = "Experiência é obrigatória";
+    }
+
+    setErrors(newErrors);
+
+    // If there are errors, don't submit
+    if (Object.keys(newErrors).length > 0) {
+      setIsSubmitting(false);
       return;
     }
 
-    // Redirecionar para página de confirmação
-    navigate("/confirmacao");
+    try {
+      // Format birth date for webhook
+      const dataNascimento = `${formData.ano}-${formData.mes.padStart(2, '0')}-${formData.dia.padStart(2, '0')}`;
+
+      // Prepare data for webhook
+      const webhookData = {
+        nomeCompleto: formData.nomeCompleto.trim(),
+        email: formData.email.toLowerCase().trim(),
+        telefone: formData.telefone.replace(/\D/g, ""), // Send only numbers
+        dataNascimento: dataNascimento,
+        experiencia: formData.experiencia,
+      };
+
+      // Send to webhook
+      const response = await fetch("https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(webhookData),
+      });
+
+      if (response.ok) {
+        // Success - redirect to confirmation page
+        navigate("/confirmacao");
+      } else {
+        throw new Error("Erro ao enviar formulário");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Erro ao enviar formulário. Tente novamente.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>,
   ) => {
+    const { name, value } = e.target;
+
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors(prev => ({ ...prev, [name]: "" }));
+    }
+
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value,
+      [name]: value,
+    });
+  };
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let value = e.target.value.replace(/\D/g, ""); // Remove non-numeric
+
+    // Format Brazilian phone number
+    if (value.length <= 11) {
+      if (value.length <= 2) {
+        value = value;
+      } else if (value.length <= 7) {
+        value = value.replace(/(\d{2})(\d{1,5})/, "($1) $2");
+      } else {
+        value = value.replace(/(\d{2})(\d{5})(\d{1,4})/, "($1) $2-$3");
+      }
+    }
+
+    // Clear error when user starts typing
+    if (errors.telefone) {
+      setErrors(prev => ({ ...prev, telefone: "" }));
+    }
+
+    setFormData({
+      ...formData,
+      telefone: value,
     });
   };
 
@@ -84,12 +253,18 @@ export default function Formulario() {
                   name="nomeCompleto"
                   value={formData.nomeCompleto}
                   onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white placeholder-white/50 focus:border-gold focus:outline-none"
-                  placeholder="Digite seu nome e sobrenome"
+                  className={`w-full px-4 py-3 rounded-lg bg-black/50 border text-white placeholder-white/50 focus:outline-none ${
+                    errors.nomeCompleto
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gold/30 focus:border-gold"
+                  }`}
+                  placeholder="Digite seu nome completo"
                 />
+                {errors.nomeCompleto && (
+                  <p className="text-red-500 text-sm mt-1">{errors.nomeCompleto}</p>
+                )}
                 <p className="text-white/60 text-sm mt-1">
-                  Digite nome e sobrenome
+                  Digite seu nome completo
                 </p>
               </div>
 
@@ -102,11 +277,21 @@ export default function Formulario() {
                   type="tel"
                   name="telefone"
                   value={formData.telefone}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white placeholder-white/50 focus:border-gold focus:outline-none"
+                  onChange={handlePhoneChange}
+                  maxLength={15}
+                  className={`w-full px-4 py-3 rounded-lg bg-black/50 border text-white placeholder-white/50 focus:outline-none ${
+                    errors.telefone
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gold/30 focus:border-gold"
+                  }`}
                   placeholder="(45) 99999-9999"
                 />
+                {errors.telefone && (
+                  <p className="text-red-500 text-sm mt-1">{errors.telefone}</p>
+                )}
+                <p className="text-white/60 text-sm mt-1">
+                  Formato: (45) 99999-9999 ou internacional
+                </p>
               </div>
 
               {/* E-mail */}
@@ -119,10 +304,16 @@ export default function Formulario() {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white placeholder-white/50 focus:border-gold focus:outline-none"
+                  className={`w-full px-4 py-3 rounded-lg bg-black/50 border text-white placeholder-white/50 focus:outline-none ${
+                    errors.email
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gold/30 focus:border-gold"
+                  }`}
                   placeholder="seu@email.com"
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                )}
               </div>
 
               {/* Data de Nascimento */}
@@ -130,14 +321,62 @@ export default function Formulario() {
                 <label className="block text-white font-semibold mb-2">
                   Data de Nascimento <span className="text-red-500">*</span>
                 </label>
-                <input
-                  type="date"
-                  name="dataNascimento"
-                  value={formData.dataNascimento}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white focus:border-gold focus:outline-none"
-                />
+                <div className="grid grid-cols-3 gap-3">
+                  <div>
+                    <input
+                      type="number"
+                      name="dia"
+                      value={formData.dia}
+                      onChange={handleChange}
+                      min="1"
+                      max="31"
+                      placeholder="Dia"
+                      className={`w-full px-4 py-3 rounded-lg bg-black/50 border text-white placeholder-white/50 focus:outline-none ${
+                        errors.dataNascimento
+                          ? "border-red-500 focus:border-red-500"
+                          : "border-gold/30 focus:border-gold"
+                      }`}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="number"
+                      name="mes"
+                      value={formData.mes}
+                      onChange={handleChange}
+                      min="1"
+                      max="12"
+                      placeholder="Mês"
+                      className={`w-full px-4 py-3 rounded-lg bg-black/50 border text-white placeholder-white/50 focus:outline-none ${
+                        errors.dataNascimento
+                          ? "border-red-500 focus:border-red-500"
+                          : "border-gold/30 focus:border-gold"
+                      }`}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      type="number"
+                      name="ano"
+                      value={formData.ano}
+                      onChange={handleChange}
+                      min="1900"
+                      max={new Date().getFullYear()}
+                      placeholder="Ano"
+                      className={`w-full px-4 py-3 rounded-lg bg-black/50 border text-white placeholder-white/50 focus:outline-none ${
+                        errors.dataNascimento
+                          ? "border-red-500 focus:border-red-500"
+                          : "border-gold/30 focus:border-gold"
+                      }`}
+                    />
+                  </div>
+                </div>
+                {errors.dataNascimento && (
+                  <p className="text-red-500 text-sm mt-1">{errors.dataNascimento}</p>
+                )}
+                <p className="text-white/60 text-sm mt-1">
+                  Digite dia, mês e ano de nascimento
+                </p>
               </div>
 
               {/* Experiência com dança */}
@@ -149,8 +388,11 @@ export default function Formulario() {
                   name="experiencia"
                   value={formData.experiencia}
                   onChange={handleChange}
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-black/50 border border-gold/30 text-white focus:border-gold focus:outline-none"
+                  className={`w-full px-4 py-3 rounded-lg bg-black/50 border text-white focus:outline-none ${
+                    errors.experiencia
+                      ? "border-red-500 focus:border-red-500"
+                      : "border-gold/30 focus:border-gold"
+                  }`}
                 >
                   <option value="">Selecione uma opção</option>
                   <option value="primeira-vez">1ª Vez</option>
@@ -161,14 +403,22 @@ export default function Formulario() {
                     Danço em outra escola/academia, mas quero conhecer
                   </option>
                 </select>
+                {errors.experiencia && (
+                  <p className="text-red-500 text-sm mt-1">{errors.experiencia}</p>
+                )}
               </div>
 
               {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full bg-gold text-black py-4 rounded-lg font-bold text-lg hover:bg-gold/90 transition-colors btn-shimmer-gold btn-enhanced"
+                disabled={isSubmitting}
+                className={`w-full py-4 rounded-lg font-bold text-lg transition-colors btn-shimmer-gold btn-enhanced ${
+                  isSubmitting
+                    ? "bg-gold/50 text-black/50 cursor-not-allowed"
+                    : "bg-gold text-black hover:bg-gold/90"
+                }`}
               >
-                Enviar Formulário
+                {isSubmitting ? "Enviando..." : "Enviar Formulário"}
               </button>
             </form>
           </div>
