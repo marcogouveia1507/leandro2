@@ -16,6 +16,16 @@ export default function Index() {
   const [activeAccordion, setActiveAccordion] = useState<string | null>("q1");
   const [currentSlide, setCurrentSlide] = useState(0);
 
+  // Tracking hooks
+  const { getCampaignInfo, isFromGoogleAds } = useTracking();
+  const trackHeaderCTA = useTrackButton('header_cta_click', { location: 'header' });
+  const trackHeroCTA = useTrackButton('hero_cta_click', { location: 'hero' });
+  const trackHeroSecondary = useTrackButton('hero_secondary_click', { location: 'hero' });
+  const trackAboutCTA = useTrackButton('about_cta_click', { location: 'about' });
+  const trackFreeTrial = useTrackButton('free_trial_cta_click', { location: 'free_trial' });
+  const trackParallax = useTrackButton('parallax_cta_click', { location: 'parallax' });
+  const trackFinalCTA = useTrackButton('final_cta_click', { location: 'final' });
+
   const toggleAccordion = (id: string) => {
     setActiveAccordion(activeAccordion === id ? null : id);
   };
