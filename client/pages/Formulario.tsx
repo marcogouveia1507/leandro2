@@ -198,17 +198,14 @@ export default function Formulario() {
     if (!submissionSuccess) {
       try {
         console.log("Attempting no-cors fetch...");
-        await fetch(
-          "https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/",
-          {
-            method: "POST",
-            mode: "no-cors",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(webhookData),
+        await fetch("https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/", {
+          method: "POST",
+          mode: "no-cors",
+          headers: {
+            "Content-Type": "application/json",
           },
-        );
+          body: JSON.stringify(webhookData),
+        });
 
         console.log("No-cors submission completed");
         submissionSuccess = true; // Assume success with no-cors
@@ -229,14 +226,11 @@ export default function Formulario() {
         formData2.append("experiencia", webhookData.experiencia);
         formData2.append("timestamp", webhookData.timestamp);
 
-        await fetch(
-          "https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/",
-          {
-            method: "POST",
-            mode: "no-cors",
-            body: formData2,
-          },
-        );
+        await fetch("https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/", {
+          method: "POST",
+          mode: "no-cors",
+          body: formData2,
+        });
 
         console.log("Form data submission completed");
         submissionSuccess = true;
@@ -253,8 +247,13 @@ export default function Formulario() {
     } else {
       console.error("All submission methods failed");
       // Store data locally for retry
-      localStorage.setItem("pendingFormSubmission", JSON.stringify(webhookData));
-      alert("Erro de conexão. Seus dados foram salvos e você pode tentar novamente. Redirecionando...");
+      localStorage.setItem(
+        "pendingFormSubmission",
+        JSON.stringify(webhookData),
+      );
+      alert(
+        "Erro de conexão. Seus dados foram salvos e você pode tentar novamente. Redirecionando...",
+      );
       // Still redirect but with saved data
       navigate("/confirmacao");
     }
