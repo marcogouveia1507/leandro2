@@ -27,39 +27,27 @@ export default function Formulario() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Function to capture URL tracking parameters
+  // Function to capture URL tracking parameters using new tracking system
   const getTrackingSource = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const referrer = document.referrer || window.location.origin;
+    const utmParams = getUTMParams();
+    const campaignInfo = getCampaignInfo();
 
-    // Extract UTM parameters
-    const utmSource = urlParams.get("utm_source") || "";
-    const utmMedium = urlParams.get("utm_medium") || "";
-    const utmCampaign = urlParams.get("utm_campaign") || "";
-    const utmContent = urlParams.get("utm_content") || "";
-    const utmTerm = urlParams.get("utm_term") || "";
+    // Build tracking URL in the Google Ads format
+    const baseUrl = window.location.origin + window.location.pathname;
+    const params = [];
 
-    // Build tracking URL in the specified format
-    if (utmSource || utmMedium || utmCampaign || utmContent || utmTerm) {
-      const baseUrl = window.location.origin + window.location.pathname;
-      let trackingUrl = baseUrl;
+    if (utmParams.utm_source) params.push(`utm_source=${utmParams.utm_source}`);
+    if (utmParams.utm_medium) params.push(`utm_medium=${utmParams.utm_medium}`);
+    if (utmParams.utm_campaign) params.push(`utm_campaign=${utmParams.utm_campaign}`);
+    if (utmParams.utm_content) params.push(`utm_content=${utmParams.utm_content}`);
+    if (utmParams.utm_term) params.push(`utm_term=${utmParams.utm_term}`);
 
-      const params = [];
-      if (utmSource) params.push(`utm_source=${utmSource}`);
-      if (utmMedium) params.push(`utm_medium=${utmMedium}`);
-      if (utmCampaign) params.push(`utm_campaign=${utmCampaign}`);
-      if (utmContent) params.push(`utm_content=${utmContent}`);
-      if (utmTerm) params.push(`utm_term=${utmTerm}`);
-
-      if (params.length > 0) {
-        trackingUrl += "?" + params.join("&");
-      }
-
-      return trackingUrl;
+    if (params.length > 0) {
+      return `${baseUrl}?${params.join('&')}`;
     }
 
-    // Fallback: return current URL or referrer info
-    return window.location.href;
+    // Return campaign info as fallback
+    return `${baseUrl}?source=${campaignInfo.source}&medium=${campaignInfo.medium}&campaign=${campaignInfo.campaign}`;
   };
 
   // Email validation regex
