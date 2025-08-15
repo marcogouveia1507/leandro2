@@ -186,7 +186,6 @@ export default function Formulario() {
       // With no-cors mode, we can't read the response
       // So we assume success and redirect
       navigate("/confirmacao");
-
     } catch (error) {
       console.error("Error submitting form:", error);
 
@@ -194,7 +193,9 @@ export default function Formulario() {
       if (error instanceof TypeError && error.message.includes("fetch")) {
         alert("Erro de conexão. Verifique sua internet e tente novamente.");
       } else {
-        alert("Erro ao enviar formulário. Tente novamente em alguns instantes.");
+        alert(
+          "Erro ao enviar formulário. Tente novamente em alguns instantes.",
+        );
       }
     } finally {
       setIsSubmitting(false);
