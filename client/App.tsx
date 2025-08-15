@@ -14,6 +14,7 @@ import RitmosEmagrecer from "./pages/RitmosEmagrecer";
 import RitmosIniciantes from "./pages/RitmosIniciantes";
 import RitmosMatricula from "./pages/RitmosMatricula";
 import RitmosCalorias from "./pages/RitmosCalorias";
+import Analytics from "./pages/Analytics";
 
 // Extend HTMLElement to include our custom _reactRoot property
 declare global {
