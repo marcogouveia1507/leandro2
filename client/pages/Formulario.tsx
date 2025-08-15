@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useTracking, useTrackForm } from "../hooks/use-tracking";
 
 // Declare global function for Google Ads conversion tracking
 declare global {
