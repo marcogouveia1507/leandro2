@@ -23,23 +23,26 @@ export default function RitmosCalorias() {
     {
       icon: Heart,
       title: "Ambiente Acolhedor",
-      description: "Sinta-se segura e à vontade para se expressar sem julgamentos."
+      description:
+        "Sinta-se segura e à vontade para se expressar sem julgamentos.",
     },
     {
       icon: Users,
       title: "Comunidade\nAmigável",
-      description: "Aqui você se conecta com mulheres que vibram na mesma energia que você."
+      description:
+        "Aqui você se conecta com mulheres que vibram na mesma energia que você.",
     },
     {
       icon: TrendingUp,
       title: "Do Iniciante ao\nAvançado",
-      description: "Passos adaptados para o seu nível, com evolução constante."
+      description: "Passos adaptados para o seu nível, com evolução constante.",
     },
     {
       icon: Sparkles,
       title: "Aulas Terapêuticas",
-      description: "Uma pausa para cuidar de você, corpo e mente, na correria do dia a dia."
-    }
+      description:
+        "Uma pausa para cuidar de você, corpo e mente, na correria do dia a dia.",
+    },
   ];
 
   const nextSlide = () => {
@@ -148,7 +151,7 @@ export default function RitmosCalorias() {
           {/* Benefits Carousel */}
           <div className="relative max-w-4xl mx-auto">
             <div className="overflow-hidden">
-              <div 
+              <div
                 className="flex transition-transform duration-500 ease-in-out"
                 style={{ transform: `translateX(-${currentSlide * 100}%)` }}
               >
@@ -158,9 +161,13 @@ export default function RitmosCalorias() {
                     <div key={index} className="w-full flex-shrink-0 px-4">
                       <div className="bg-gray-850 border border-gold/20 rounded-lg p-8 text-center mx-auto max-w-sm">
                         <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                          <IconComponent 
-                            className={`${benefit.icon === Heart ? 'w-6 h-6' : benefit.icon === Users ? 'w-8 h-6' : 'w-7 h-6'} text-gold`} 
-                            fill={benefit.icon === Heart || benefit.icon === Users ? "currentColor" : "none"}
+                          <IconComponent
+                            className={`${benefit.icon === Heart ? "w-6 h-6" : benefit.icon === Users ? "w-8 h-6" : "w-7 h-6"} text-gold`}
+                            fill={
+                              benefit.icon === Heart || benefit.icon === Users
+                                ? "currentColor"
+                                : "none"
+                            }
                           />
                         </div>
                         <h3 className="font-bold text-xl mb-4 whitespace-pre-line">
@@ -200,7 +207,7 @@ export default function RitmosCalorias() {
                   key={index}
                   onClick={() => setCurrentSlide(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    currentSlide === index ? 'bg-gold' : 'bg-gold/30'
+                    currentSlide === index ? "bg-gold" : "bg-gold/30"
                   }`}
                   aria-label={`Ir para slide ${index + 1}`}
                 />
