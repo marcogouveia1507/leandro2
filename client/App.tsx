@@ -10,6 +10,10 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Formulario from "./pages/Formulario";
 import Confirmacao from "./pages/Confirmacao";
+import RitmosEmagrecer from "./pages/RitmosEmagrecer";
+import RitmosIniciantes from "./pages/RitmosIniciantes";
+import RitmosMatricula from "./pages/RitmosMatricula";
+import RitmosCalorias from "./pages/RitmosCalorias";
 
 // Extend HTMLElement to include our custom _reactRoot property
 declare global {
@@ -30,6 +34,10 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/formulario" element={<Formulario />} />
           <Route path="/confirmacao" element={<Confirmacao />} />
+          <Route path="/ritmos-emagrecer" element={<RitmosEmagrecer />} />
+          <Route path="/ritmos-iniciantes" element={<RitmosIniciantes />} />
+          <Route path="/ritmos-matricula" element={<RitmosMatricula />} />
+          <Route path="/ritmos-calorias" element={<RitmosCalorias />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
