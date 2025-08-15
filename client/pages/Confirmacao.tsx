@@ -1,13 +1,53 @@
 import { Link } from "react-router-dom";
 import { Check, Phone } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function Confirmacao() {
+  const [retryAttempted, setRetryAttempted] = useState(false);
+
   const handleWhatsAppContact = () => {
     window.open(
       "https://wa.me/554588029813?text=Oi!%20Eu%20vim%20do%20site%20de%20ritmos.%20Pode%20me%20passar%20mais%20informa%C3%A7%C3%B5es?",
       "_blank",
     );
   };
+
+  // Try to resend pending form data on page load
+  useEffect(() => {
+    const retryPendingSubmission = async () => {
+      if (retryAttempted) return;
+
+      const pendingData = localStorage.getItem("pendingFormSubmission");
+      if (pendingData) {
+        try {
+          setRetryAttempted(true);
+          console.log("Retrying pending submission...");
+
+          const data = JSON.parse(pendingData);
+
+          const response = await fetch(
+            "https://hooks.zapier.com/hooks/catch/10139071/u6xnafb/",
+            {
+              method: "POST",
+              mode: "no-cors",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            },
+          );
+
+          console.log("Retry submission completed");
+          localStorage.removeItem("pendingFormSubmission");
+          localStorage.setItem("lastFormSubmission", JSON.stringify(data));
+        } catch (error) {
+          console.log("Retry failed:", error);
+        }
+      }
+    };
+
+    retryPendingSubmission();
+  }, [retryAttempted]);
 
   return (
     <div className="min-h-screen bg-black text-white">
