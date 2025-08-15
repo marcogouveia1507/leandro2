@@ -85,6 +85,7 @@ export default function Index() {
             {/* CTA Button */}
             <Link
               to="/formulario"
+              onClick={trackHeaderCTA}
               className="bg-gold text-black px-6 py-2 rounded-full font-medium hover:bg-gold/90 transition-colors btn-shimmer-gold btn-enhanced"
             >
               Aula Teste
