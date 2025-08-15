@@ -11,6 +11,9 @@ declare global {
 
 export default function Formulario() {
   const navigate = useNavigate();
+  const { getUTMParams, getCampaignInfo, trackConversion } = useTracking();
+  const trackFormSubmit = useTrackForm('lead_form');
+
   const [formData, setFormData] = useState({
     nomeCompleto: "",
     telefone: "",
